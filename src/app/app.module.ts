@@ -6,7 +6,6 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
-//import { ViewAllComponent } from './view-all/view-all.component';
 import { ShopComponent } from './shop/shop.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
@@ -14,17 +13,18 @@ import { RouterModule } from "@angular/router";
 import { routes } from "./constants/routes";
 import { FooterComponent } from './footer/footer.component';
 import { ItemsComponent } from './items/items.component';
+import { CreateComponent } from './create/create.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    //ViewAllComponent,
     ShopComponent,
     NavbarComponent,
     FooterComponent,
-    ItemsComponent
+    ItemsComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,
