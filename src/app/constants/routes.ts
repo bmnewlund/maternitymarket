@@ -30,7 +30,7 @@ export const routes = [
   {path: 'footer', component: FooterComponent},
   {path: 'items', component: ItemsComponent},
   {path: 'legal', component: LegalComponent},
-  {path: 'login', component: LegalComponent},
+  {path: 'login', component: LoginComponent},
   {path: 'myitems', component: MyitemsComponent},
   {path: 'navbar', component: NavbarComponent},
   {path: 'signup', component: SignupComponent},
