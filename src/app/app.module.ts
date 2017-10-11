@@ -22,7 +22,7 @@ import { SignupComponent } from './signup/signup.component';
 import { EdititemComponent } from './edititem/edititem.component';
 import { EditprofileComponent } from './editprofile/editprofile.component';
 import { MyitemsComponent } from './myitems/myitems.component';
-import { PracticeComponent } from './practice/practice.component';
+import { DataService } from './services/data.service';
 
 @NgModule({
   declarations: [
@@ -41,8 +41,7 @@ import { PracticeComponent } from './practice/practice.component';
     SignupComponent,
     EdititemComponent,
     EditprofileComponent,
-    MyitemsComponent,
-    PracticeComponent
+    MyitemsComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +49,7 @@ import { PracticeComponent } from './practice/practice.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
