@@ -13,7 +13,7 @@ import { NavbarComponent } from "../navbar/navbar.component";
 import { OneitemComponent } from "app/oneitem/oneitem.component";
 
 export const routes = [
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  //{path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   //{path: 'login', component: LoginComponent},
   {path: 'about', component: AboutComponent},

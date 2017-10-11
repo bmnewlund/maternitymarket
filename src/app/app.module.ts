@@ -22,6 +22,7 @@ import { SignupComponent } from './signup/signup.component';
 import { EdititemComponent } from './edititem/edititem.component';
 import { EditprofileComponent } from './editprofile/editprofile.component';
 import { MyitemsComponent } from './myitems/myitems.component';
+import { PracticeComponent } from './practice/practice.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { MyitemsComponent } from './myitems/myitems.component';
     SignupComponent,
     EdititemComponent,
     EditprofileComponent,
-    MyitemsComponent
+    MyitemsComponent,
+    PracticeComponent
   ],
   imports: [
     BrowserModule,

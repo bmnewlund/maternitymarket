@@ -6,10 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create.component.css']
 })
 export class CreateComponent implements OnInit {
+  category:string;
+  title:string;
+  description:string;
+  price:number;
+  zip:number;
+
 
   constructor() { }
 
   ngOnInit() {
+    this.category = '';
+    this.title = '';
+    this.description = '';
+    this.price = 0;
+    this.zip = 0;
   }
 
 }
