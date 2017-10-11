@@ -17,3 +17,8 @@ export class EditprofileComponent implements OnInit {
 function ActivateEditProfile(){
   //remove all disabled attributes 
 }
+
+function SaveAndDisable(){
+  //update information in database 
+  //disable fields
+}
