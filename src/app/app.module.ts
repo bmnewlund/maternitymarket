@@ -18,6 +18,10 @@ import { AdminComponent } from './admin/admin.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { LegalComponent } from './legal/legal.component';
+import { SignupComponent } from './signup/signup.component';
+import { EdititemComponent } from './edititem/edititem.component';
+import { EditprofileComponent } from './editprofile/editprofile.component';
+import { MyitemsComponent } from './myitems/myitems.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +36,11 @@ import { LegalComponent } from './legal/legal.component';
     AdminComponent,
     ContactComponent,
     AboutComponent,
-    LegalComponent
+    LegalComponent,
+    SignupComponent,
+    EdititemComponent,
+    EditprofileComponent,
+    MyitemsComponent
   ],
   imports: [
     BrowserModule,
