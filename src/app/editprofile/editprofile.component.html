@@ -1,0 +1,33 @@
+<div class="column">
+    <div class="row offset-lg-8 col-lg-4">
+      <button type="button" onclick="ActivateEditProfile()" id="EditProfileButton"class="btn btn-primary btn-lg">Edit Profile</button>
+  
+      <form>
+        <div class="form-group">
+          <label for="SignUpEmail">Email address</label>
+          <input type="email" class="form-control" id="SignUpEmail" aria-describedby="emailHelp" placeholder="Enter email" disabled>
+          <small id="emailHelp" class="form-text text-muted">We'll hide this from buyers.</small>
+        </div>
+        <div class="form-group">
+            <label for="SignUpPhone">Phone number</label>
+            <input type="tel" class="form-control" id="SignUpPhone" aria-describedby="emailHelp" placeholder="Enter phone number" disabled>
+            <small id="phoneHelp" class="form-text text-muted">This is optional. Enter your number if you'd like buyers to call or text you.</small>
+        </div>
+        <div class="form-group">
+          <label for="SignUpPassword">Password</label>
+          <input type="password" class="form-control" id="SignUpPassword" placeholder="Password" disabled>
+        </div>
+        <div class="form-group">
+          <label for="SignUpConfirmPassword">Confirm</label>
+          <input type="password" class="form-control" id="SignUpConfirmPassword" placeholder="Passwords must match" disabled>
+        </div>
+        <div class="form-group">
+          <label for="SignUpZip">Zip Code</label>
+          <input type="text" pattern="[0-9]{5}" class="form-control" id="SignUpZip" placeholder="Enter zip code" disabled>
+        </div>
+  
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+      </form>
+  
+    </div>
+  </div>
