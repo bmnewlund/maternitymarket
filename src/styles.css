@@ -7,8 +7,18 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
-.link {
+.small-text {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+}
+
+a {
     color: #8b4d9b;
+}
+
+a:hover, a:active {
+    color:#c051e2;
+    text-decoration: none;
 }
 
 .title-font {
@@ -29,6 +39,7 @@ body {
 
 .btn:hover, btn:focus, .btn:active, .btn.active, .open > .dropdown-toggle.btn {
     background: #d18ee4;
+    cursor: pointer;
 }
 
 .btn:focus, .btn:active:focus, .btn.active:focus {
