@@ -7,6 +7,10 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+.link {
+    color: #8b4d9b;
+}
+
 .title-font {
     font-family: 'Montserrat', sans-serif;
     font-weight: lighter;
