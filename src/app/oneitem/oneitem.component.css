@@ -1,3 +1,7 @@
+.padding-top {
+    padding-top: 40px;
+}
+
 .price-font {
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
@@ -7,8 +11,14 @@
 }
 
 .back-link {
-    padding-bottom: 20px;
-    margin: -20px 0px 0px -30px;
+    padding: 20px;
+    margin: 0px 10px 0px 10px;
+    border-radius: 50px;
+    background: rgb(207, 169, 0);
+}
+
+.back-link:hover, .back-link:focus, .back-link:active, .back-link.active {
+    background: rgb(226, 194, 78);
 }
 
 .desc-box {
@@ -47,4 +57,8 @@
 
 .padding {
     padding: 2em 0em 1em 2em;
+}
+
+.prev-next-btns {
+    border-radius: 50px;
 }

@@ -1,13 +1,24 @@
-.text {
-    font-family: 'Roboto', sans-serif;
+.nav-link {
+    margin-left: 13px;
+    margin-right: 13px;
 }
 
-.nav-spacer {
-    margin-left: 20px;
-    margin-right: 20px;
+.navbar {
+    height: 50px;
 }
 
-.logo-spacer {
+.nav-text {
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+.logo {
     margin-left: 30px;
     margin-right: 35px;
+    height: 25px;
+}
+
+.nav-background {
+    background-color: rgb(207, 169, 0);
 }
