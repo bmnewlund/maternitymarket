@@ -37,6 +37,7 @@ a:hover, a:active {
     font-size: 90px;
     line-height: 90px;
     padding-top: 30px;
+    padding-bottom: 20px;
 }
 
 .btn {
