@@ -1,0 +1,30 @@
+.tight-spacing {
+    margin-top: -6px;
+}
+
+.header-spacing {
+    margin-top: -10px;
+}
+
+.edit-btn {
+    margin-top: 5em;
+    position: absolute;
+    z-index: 1;
+}
+
+.form-custom {
+    background-color: white;
+    border-radius: 25px;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+}
+
+.opacity-box {
+    background-color: rgb(255, 190, 253);
+    opacity: .8;
+    border-radius: 25px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
