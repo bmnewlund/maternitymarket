@@ -7,7 +7,7 @@
     <div class="collapse navbar-collapse nav-text" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a (click)="LoggedIn = true" class="nav-link" routerLink="/home">seller log in <span class="sr-only">(current)</span></a>
+          <a (click)="LoggedIn = true" class="nav-link" data-toggle="modal" data-target="#login-modal">seller log in <span class="sr-only">(current)</span></a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
@@ -44,4 +44,27 @@
       </form>
     </div>
   </nav>
+</div>
+
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-danger" style="display: none;" role="alert" id="li_error"></div>
+        <label for="li_email">Email:</label>
+        <input id="li_email" />
+        <label for="li_password">Password:</label>
+        <input type="password" id="li_password" />
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button id="login" type="button" class="btn btn-primary">Login</button>
+    </div>
+  </div>
 </div>
