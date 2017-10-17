@@ -7,7 +7,7 @@
     <div class="collapse navbar-collapse nav-text" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a (click)="LoggedIn = true" class="nav-link" routerLink="/home">seller log in <span class="sr-only">(current)</span></a>
+          <a (click)="LoggedIn = true" class="nav-link" data-toggle="modal" data-target="#login-modal">seller log in <span class="sr-only">(current)</span></a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
@@ -45,3 +45,7 @@
     </div>
   </nav>
 </div>
+
+
+
+<app-login></app-login>
