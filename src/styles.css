@@ -80,3 +80,7 @@ a:hover, a:active {
 	color: white;
 	box-shadow: none;
 }
+
+.footer-spacing {
+    height: 90px;
+}
