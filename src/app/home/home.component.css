@@ -2,19 +2,39 @@
     padding: 80px 0px 40px 0px;
 }
 
-.search-bar {
+.sign-up {
+    padding-left: 25px;
+}
+
+.search-btn {
+    background-color: white;
+    color: gray;
     border-radius: 50px 0px 0px 50px;
     height: 75px;
     padding: 5px 5px 5px 25px;
     font-family: 'Open Sans', sans-serif;
     font-size: 30px;
+    text-align: left;
+}
+
+.dropdown-toggle::after {
+    display:none
 }
 
 .link-padding {
     padding: 15px 0px 0px 15px;
 }
 
-.btn {
+.browse-btn {
+    height: 75px;
     border-radius: 0px 50px 50px 0px;
     text-align: left;
+    margin-left: -5px;
+}
+
+.dropdown-menu {
+    background-color: #E6E6E6;
+    margin-left: 15px;
+    border-radius: 25px;
+    padding: 20px 0px 25px 0px;
 }
