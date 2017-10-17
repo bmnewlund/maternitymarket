@@ -3,10 +3,19 @@
         <span class="title-font title-padding">Maternity<br>Market</span>
     </div>
     <div class="row">
-        <input type="search" class="col-lg-7 search-bar" placeholder="I'm looking for..." />
-        <button type="button" class="btn btn-info" (click)="viewAll()">or browse all</button>
+        <div class="dropdown col-lg-12">
+            <button class="btn btn-secondary dropdown-toggle search-btn col-lg-7" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                I'm looking for...
+            </button>
+            <div class="col-lg-5 dropdown-menu small-text" aria-labelledby="dropdownMenu2">
+                <button class="dropdown-item" type="button">Action</button>
+                <button class="dropdown-item" type="button">Another action</button>
+                <button class="dropdown-item" type="button">Something else here</button>
+            </div>
+            <button type="button" class="btn btn-info browse-btn" (click)="viewAll()">or browse all</button>
+        </div>
     </div>
     <div class="row link-padding">
-            <a routerLink="/signup"><b>Have something you want to sell or give away?</b></a>
+            <a routerLink="/signup" class="sign-up"><b>Have something you want to sell or give away?</b></a>
     </div>
 </div>
