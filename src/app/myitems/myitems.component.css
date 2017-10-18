@@ -6,7 +6,6 @@
 
 .text-right {
     text-align: right;
-    /* margin-right: 8px; */
 }
 
 .title-tab {
@@ -32,4 +31,14 @@
     width: 30%;
     padding: 10px 10px 0px 10px;
     margin: 0px 10px 0px 10px;
+}
+
+.btns {
+    text-align: right;
+    width: 11.75em;
+    padding: 5px;
+    margin-top: 10px;
+    margin-left: 10px;
+    position: absolute;
+    align-content: right;
 }
