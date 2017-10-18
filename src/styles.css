@@ -40,6 +40,14 @@ a:hover, a:active {
     padding-bottom: 20px;
 }
 
+.softer-title-font {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: lighter;
+    text-transform: uppercase;
+    font-size: 30px;
+    line-height: 30px;
+}
+
 .btn {
     padding: 5px 10px;
     border: 0 none;
