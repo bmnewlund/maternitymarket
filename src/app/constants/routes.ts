@@ -10,10 +10,10 @@ import { FooterComponent } from "app/footer/footer.component";
 import { HomeComponent } from "../home/home.component";
 import { ItemsComponent } from "app/items/items.component";
 import { LegalComponent } from "app/legal/legal.component";
-import { LoginComponent } from "../login/login.component";
+import { LoginComponent } from "app/auth/login/login.component";
 import { MyitemsComponent } from 'app/myitems/myitems.component';
 import { NavbarComponent } from "../navbar/navbar.component";
-import { SignupComponent } from 'app/signup/signup.component';
+import { SignupComponent } from 'app/auth/signup/signup.component';
 import { OneitemComponent } from "app/oneitem/oneitem.component";
 
 

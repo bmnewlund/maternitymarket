@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from 'app/auth/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
@@ -18,11 +18,12 @@ import { AdminComponent } from './admin/admin.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { LegalComponent } from './legal/legal.component';
-import { SignupComponent } from './signup/signup.component';
+import { SignupComponent } from 'app/auth/signup/signup.component';
 import { EdititemComponent } from './edititem/edititem.component';
 import { EditprofileComponent } from './editprofile/editprofile.component';
 import { MyitemsComponent } from './myitems/myitems.component';
 import { ItemService } from './create/item.service';
+import { AuthService } from 'app/auth/auth.service';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,7 @@ import { ItemService } from './create/item.service';
     FormsModule,
     HttpModule
   ],
-  providers: [ItemService],
+  providers: [ItemService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
