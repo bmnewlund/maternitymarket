@@ -10,9 +10,12 @@ export class AuthService {
 
   signupUser(email: string, password: string) {
     firebase.auth().createUserWithEmailAndPassword(email, password)
+    // also needs to send other data to the database
       .catch(
         error => console.log(error)
       )
+
+      // firebase.auth().currentUser.phoneNumber
   }
 
   signinUser(email: string, password: string) {
