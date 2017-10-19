@@ -9,7 +9,7 @@
 .search-btn {
     background-color: white;
     color: gray;
-    border-radius: 50px 0px 0px 50px;
+    border-radius: 40px 0px 0px 40px;
     height: 75px;
     padding: 5px 5px 5px 25px;
     font-family: 'Open Sans', sans-serif;
@@ -37,4 +37,13 @@
     margin-left: 15px;
     border-radius: 25px;
     padding: 20px 0px 25px 0px;
+}
+
+.menu {
+    width: 39.4em;
+    background-color: white;
+    margin-top: -75px;
+    height: 300px;
+    border-radius: 40px 0px 40px 40px;
+    position: absolute;
 }
