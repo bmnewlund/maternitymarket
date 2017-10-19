@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditprofileComponent implements OnInit {
 
-Disactivated = false
+Deactivated = false
 
-ActivateEditProfile(){
+ActivateEditProfile(e){
+this.Deactivated = !this.Deactivated
+}
+
+SaveChanges(e){
+this.Deactivated = !this.Deactivated
 
 }
 
