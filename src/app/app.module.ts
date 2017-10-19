@@ -13,7 +13,7 @@ import { routes } from "./constants/routes";
 import { FooterComponent } from './footer/footer.component';
 import { ItemsComponent } from './items/items.component';
 import { CreateComponent } from './create/create.component';
-import { OneitemComponent } from './oneitem/oneitem.component';
+import { OneitemComponent } from './items/oneitem/oneitem.component';
 import { AdminComponent } from './admin/admin.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';

@@ -13,7 +13,7 @@ import { LoginComponent } from "app/auth/login/login.component";
 import { MyitemsComponent } from 'app/myitems/myitems.component';
 import { NavbarComponent } from "../navbar/navbar.component";
 import { SignupComponent } from 'app/auth/signup/signup.component';
-import { OneitemComponent } from "app/oneitem/oneitem.component";
+import { OneitemComponent } from "app/items/oneitem/oneitem.component";
 import { AuthGuard } from 'app/auth/auth-guard.service';
 import { LoginpageComponent } from "app/loginpage/loginpage.component";
 
@@ -35,6 +35,7 @@ export const routes = [
   {path: 'navbar', component: NavbarComponent},
   {path: 'signup', component: SignupComponent},
   {path: 'oneitem', component: OneitemComponent},
+  {path: 'loginpage', component: LoginpageComponent},
   {path: '**', redirectTo: 'signup'}
 
 ];
