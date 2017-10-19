@@ -24,6 +24,7 @@ import { EditprofileComponent } from './editprofile/editprofile.component';
 import { MyitemsComponent } from './myitems/myitems.component';
 import { ItemService } from './create/item.service';
 import { AuthService } from 'app/auth/auth.service';
+import { DeleteitemComponent } from './deleteitem/deleteitem.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { AuthService } from 'app/auth/auth.service';
     SignupComponent,
     EdititemComponent,
     EditprofileComponent,
-    MyitemsComponent
+    MyitemsComponent,
+    DeleteitemComponent
   ],
   imports: [
     BrowserModule,
