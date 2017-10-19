@@ -1,32 +1,32 @@
 <div class="edit-btn-box">
-  <button type="button" onclick="ActivateEditProfile()" id="EditProfileButton" class="btn btn-primary btn-lg edit-btn" [hidden]="Disactivated">Edit Profile</button>
+  <button type="button" (click)="ActivateEditProfile($event)" id="EditProfileButton" class="btn btn-primary btn-lg edit-btn" [hidden]="Deactivated">Edit Profile</button>
+  <div class ="opacity-box" [hidden]="Deactivated"></div>
 </div>
-<div class ="opacity-box" [hidden]="Disactivated"></div>
 <div>
   <form class="small-text form-custom">
     <div class="form-group">
       <label for="SignUpEmail">Email address</label>
-      <input type="email" class="form-control small-text tight-spacing" id="SignUpEmail" aria-describedby="emailHelp" placeholder="Enter email" disabled>
+      <input type="email" class="form-control small-text tight-spacing" id="SignUpEmail" aria-describedby="emailHelp" placeholder="Enter email">
       <small id="emailHelp" class="form-text text-muted">We'll hide this from buyers.</small>
     </div>
     <div class="form-group header-spacing">
         <label for="SignUpPhone">Phone number</label>
-        <input type="tel" class="form-control small-text tight-spacing" id="SignUpPhone" aria-describedby="emailHelp" placeholder="Enter phone number" disabled>
+        <input type="tel" class="form-control small-text tight-spacing" id="SignUpPhone" aria-describedby="emailHelp" placeholder="Enter phone number" >
         <small id="phoneHelp" class="form-text text-muted">This is optional. Enter your number if you'd like buyers to call or text you.</small>
     </div>
     <div class="form-group header-spacing">
       <label for="SignUpPassword">Password</label>
-      <input type="password" class="form-control small-text tight-spacing" id="SignUpPassword" placeholder="Password" disabled>
+      <input type="password" class="form-control small-text tight-spacing" id="SignUpPassword" placeholder="Password">
     </div>
     <div class="form-group header-spacing">
       <label for="SignUpConfirmPassword">Confirm</label>
-      <input type="password" class="form-control small-text tight-spacing" id="SignUpConfirmPassword" placeholder="Passwords must match" disabled>
+      <input type="password" class="form-control small-text tight-spacing" id="SignUpConfirmPassword" placeholder="Passwords must match">
     </div>
     <div class="form-group header-spacing">
       <label for="SignUpZip">Zip Code</label>
-      <input type="text" pattern="[0-9]{5}" class="form-control small-text tight-spacing" id="SignUpZip" placeholder="Enter zip code" disabled>
+      <input type="text" pattern="[0-9]{5}" class="form-control small-text tight-spacing" id="SignUpZip" placeholder="Enter zip code">
     </div>
 
-    <button type="submit" class="btn btn-primary btn-sm">Save Changes</button>
+    <button type="submit" (click)="SaveChanges($event)" class="btn btn-primary btn-sm">Save Changes</button>
   </form>
 </div>
