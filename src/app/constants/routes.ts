@@ -1,5 +1,4 @@
 import {Routes, RouterModule} from "@angular/router";
-
 import { AboutComponent } from "app/about/about.component";
 import { AdminComponent } from "app/admin/admin.component";
 import { ContactComponent } from "app/contact/contact.component";
@@ -19,11 +18,9 @@ import { AuthGuard } from 'app/auth/auth-guard.service';
 
 
 export const routes = [
-  //{path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
-  //{path: 'login', component: LoginComponent},
   {path: 'about', component: AboutComponent},
-  {path: 'admin', component: AdminComponent},
   {path: 'contact', component: ContactComponent}, 
   {path: 'create', component: CreateComponent},
   {path: 'edititem', component: EdititemComponent},
@@ -37,5 +34,5 @@ export const routes = [
   {path: 'navbar', component: NavbarComponent},
   {path: 'signup', component: SignupComponent},
   {path: 'oneitem', component: OneitemComponent},
-  {path: '**', component: HomeComponent}
+  {path: '**', redirectTo: 'signup'}
 ];

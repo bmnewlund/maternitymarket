@@ -43,6 +43,7 @@ export class AuthService {
   logout() {
     firebase.auth().signOut();
     this.token = null;
+    this.router.navigate(['/home']);
     console.log('Great Job. you logged out');
   }
 
