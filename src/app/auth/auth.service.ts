@@ -14,33 +14,40 @@ export class AuthService {
       .catch(
         error => console.log(error)
       )
-
-      // firebase.auth().currentUser.phoneNumber
   }
 
   signinUser(email: string, password: string) {
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then(
         response => {
-          this.router.navigate(['/']);
-          firebase.auth().currentUser.getToken()
+          this.router.navigate(['/admin']);
+          
+          firebase.auth().currentUser.getIdToken()
+          
             .then(
-              (token: string) => this.token = token
+              (token: string) => {
+              this.token = token
+              console.log(token)
+              }
             )
+            // close the login modal
         }
       )
+      
       .catch(
         error => console.log(error)
       );
+     
   }
 
   logout() {
     firebase.auth().signOut();
     this.token = null;
+    console.log('Great Job. you logged out');
   }
 
   getToken() {
-    firebase.auth().currentUser.getToken()
+    firebase.auth().currentUser.getIdToken()
       .then(
         (token: string) => this.token = token
       );
@@ -51,3 +58,6 @@ export class AuthService {
     return this.token != null;
   }
 }
+
+
+

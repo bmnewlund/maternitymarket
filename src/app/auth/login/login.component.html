@@ -15,12 +15,15 @@
             <br>
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" ngModel class="form-control"/>
+          
+            <div class="modal-footer">
+              <button type="btn" class="btn btn-default" data-dismiss="modal">Cancel</button>
+              <button id="login" type="submit" class="btn" [disabled]="!f.valid">Login</button>
+            </div>
+          
           </form>
         </div>
-        <div class="modal-footer">
-          <button type="btn" class="btn btn-default" data-dismiss="modal">Cancel</button>
-          <button id="login" type="button" class="btn" [disabled]="!f.valid">Login</button>
-        </div>
+        
     </div>
   </div>
 </div>

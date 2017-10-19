@@ -15,6 +15,7 @@ import { MyitemsComponent } from 'app/myitems/myitems.component';
 import { NavbarComponent } from "../navbar/navbar.component";
 import { SignupComponent } from 'app/auth/signup/signup.component';
 import { OneitemComponent } from "app/oneitem/oneitem.component";
+import { AuthGuard } from 'app/auth/auth-guard.service';
 
 
 export const routes = [
@@ -29,6 +30,7 @@ export const routes = [
   {path: 'editprofile', component: EditprofileComponent},
   {path: 'footer', component: FooterComponent},
   {path: 'items', component: ItemsComponent},
+  {path: 'admin', component: AdminComponent, canActivate: [AuthGuard] },
   {path: 'legal', component: LegalComponent},
   {path: 'login', component: LoginComponent},
   {path: 'myitems', component: MyitemsComponent},
