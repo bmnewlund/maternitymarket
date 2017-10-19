@@ -19,7 +19,6 @@ export class SignupComponent implements OnInit {
     const password = form.value.password;
     this.authService.signupUser(email, password);
     
-  
     let data = {
       email: form.value.email,
       phone: form.value.phone,
@@ -27,14 +26,8 @@ export class SignupComponent implements OnInit {
     }
 console.log(data)
 
-
-    
     return this.http.post('https://maternity1150.firebaseio.com/users.json',
-    data).subscribe();
-
-
-
-      
+    data).subscribe();      
     }
   
   }

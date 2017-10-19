@@ -24,6 +24,7 @@ import { EditprofileComponent } from './editprofile/editprofile.component';
 import { MyitemsComponent } from './myitems/myitems.component';
 import { ItemService } from './create/item.service';
 import { AuthService } from 'app/auth/auth.service';
+import { AuthGuard } from 'app/auth/auth-guard.service';
 import { DeleteitemComponent } from './deleteitem/deleteitem.component';
 
 
@@ -53,7 +54,7 @@ import { DeleteitemComponent } from './deleteitem/deleteitem.component';
     FormsModule,
     HttpModule
   ],
-  providers: [ItemService, AuthService],
+  providers: [ItemService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
