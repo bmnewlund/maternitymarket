@@ -44,7 +44,7 @@
     background-color: white;
     padding-top: 25px;
     margin-top: -75px;
-    height: 305px;
+    height: 270px;
     border-radius: 40px 0px 40px 40px;
     position: absolute;
 }
@@ -56,13 +56,18 @@
 
 .baby-list-1 {
     margin-left: 3.4em;
-    padding-left: 70px;
+    padding-left: 50px;
 }
 
 .baby-list-2 {
-    padding-right: 70px;
+    padding-right: 50px;
 }
 
 .mom-list {
     padding-right: 4.5em;
+}
+
+.category:hover {
+    font-weight: bold;
+    color: purple;
 }
