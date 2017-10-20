@@ -1,13 +1,27 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http, Response } from '@angular/http';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import 'rxjs/Rx';
 import { Observable } from 'rxjs/Observable';
+import * as firebase from 'firebase';
+import { Items } from '../models/item.model';
 
 @Injectable()
 export class ItemService {
-  constructor(private http: Http) {}
-  AddItems(items: any) {
-    return this.http.post('https://maternity1150.firebaseio.com/items.json',
-      items);
-  }
-}
+  items: Observable<Items[]>;
+  itemsDB: AngularFireList<Items>;
+  
+    constructor(public db: AngularFireDatabase) {
+      this.itemsDB = this.db.list('items');
+        this.items = this.itemsDB.valueChanges();
+    } 
+    
+    getItems() {
+      return this.items;
+    }
+
+    createItem(items: Items) {
+
+      return this.itemsDB.set(items.title, items);
+    }
+}	
+

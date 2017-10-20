@@ -2,6 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { AngularFireModule } from "angularfire2";
+import { AngularFireDatabase } from 'angularfire2/database';
+
+import { config } from './constants/environment';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from 'app/auth/login/login.component';
@@ -27,6 +31,8 @@ import { AuthService } from 'app/auth/auth.service';
 import { AuthGuard } from 'app/auth/auth-guard.service';
 import { DeleteitemComponent } from './deleteitem/deleteitem.component';
 import { LoginpageComponent } from './loginpage/loginpage.component';
+import { AngularFireAuth } from 'angularfire2/auth';
+
 
 
 @NgModule({
@@ -54,9 +60,19 @@ import { LoginpageComponent } from './loginpage/loginpage.component';
     BrowserModule,
     RouterModule.forRoot(routes),
     FormsModule,
-    HttpModule
+    HttpModule,
+    AngularFireModule.initializeApp(config)
+    
   ],
-  providers: [ItemService, AuthService, AuthGuard],
+  providers: [
+    ItemService, 
+    AuthService, 
+    AuthGuard, 
+    AngularFireDatabase,
+    AngularFireAuth
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+

@@ -1,58 +1,27 @@
-import { Router } from '@angular/router';
-import * as firebase from 'firebase';
 import { Injectable } from '@angular/core';
+import { AngularFireAuth } from 'angularfire2/auth'
+import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthService {
   token: string;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private afAuth: AngularFireAuth) {}
 
   signupUser(email: string, password: string) {
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-    // also needs to send other data to the database
-      .catch(
-        error => console.log(error)
-      )
+    return this.afAuth.auth.createUserWithEmailAndPassword(email, password);
   }
 
   signinUser(email: string, password: string) {
-    firebase.auth().signInWithEmailAndPassword(email, password)
-      .then(
-        response => {
-          this.router.navigate(['/admin']);
-          
-          firebase.auth().currentUser.getIdToken()
-          
-            .then(
-              (token: string) => {
-              this.token = token
-              console.log(token)
-              }
-            )
-            // close the login modal
-        }
-      )
-      
-      .catch(
-        error => console.log(error)
-      );
-     
+    return this.afAuth.auth.signInWithEmailAndPassword(email, password);
   }
 
   logout() {
-    firebase.auth().signOut();
-    this.token = null;
-    this.router.navigate(['/home']);
-    console.log('Great Job. you logged out');
+    return this.afAuth.auth.signOut();
   }
 
   getToken() {
-    firebase.auth().currentUser.getIdToken()
-      .then(
-        (token: string) => this.token = token
-      );
-    return this.token;
+    return this.afAuth.auth.currentUser.getIdToken().then( token => this.token = token);
   }
 
   isAuthenticated() {
