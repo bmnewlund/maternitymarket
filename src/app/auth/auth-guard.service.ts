@@ -2,21 +2,26 @@ import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from
 import * as firebase from 'firebase';
 import { Injectable } from '@angular/core';
 import { AuthService } from './auth.service';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private router: Router,
+    private afAuth: AngularFireAuth
+  ) {}
 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-                if(!firebase.auth().currentUser){
-                  this.router.navigate(['/']);
-                  console.log('Must be signed in');
-                }
-                
-                
-                return this.authService.isAuthenticated();
-    
+  canActivate(): Observable<boolean> {
+    return this.afAuth.authState.map(auth => {
+      if(!auth) {
+        this.router.navigate(['home'])
+        return false
+      } else {
+        return true
+      }
+    })
   }
   
 }

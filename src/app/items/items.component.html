@@ -1,10 +1,31 @@
-<h2>Viewing All Items</h2>
+<!-- <h2>Viewing All Items</h2>
   <input type="search" /><a class="btn btn-info">Search</a>
   <div class="card card-block" *ngFor="let item of items">
   <h4 class="card-title">{{item.title}}</h4>
-  <p class="card-text" [hidden]="item.hide">{{item.description}}</p>
-  <p class="card-text" [hidden]="item.hide">{{item.price}}</p>
-  <p class="card-text" [hidden]="item.hide">{{item.zip}}</p>
-  <a class="btn btn-success" (click)="item.toggle()">more info</a><br><br>
-  <button class="btn btn-info" href="">full view</button>
-</div>
+  
+  <a class="btn btn-success" (click)="BrowseAll()">more info</a><br><br> -->
+  <!-- <button class="btn btn-info" href="">full view</button> -->
+<!-- </div> --> 
+
+
+<table>
+  <tr>
+    <th>Category</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th>Zip</th>
+  </tr>
+  <tr *ngFor="let item of items">
+    <td>{{ item.category }}</td>
+    <td>{{ item.title }}</td>
+    <td>{{ item.description }}</td>
+    <td>{{ item.price }}</td>
+    <td>{{ item.zip }}</td>
+
+  </tr>
+
+</table>
+  
+<a class="btn btn-success" (click)="getItems()">more info</a>
+
