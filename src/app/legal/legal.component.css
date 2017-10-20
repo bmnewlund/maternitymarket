@@ -1,0 +1,7 @@
+.terms-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 25px;
+    height: 28em;
+    overflow-y: scroll;
+}
