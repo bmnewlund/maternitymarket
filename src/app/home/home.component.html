@@ -4,51 +4,13 @@
     </div>
     <div class="row">
         <div class="dropdown col-lg-12">
-            <button class="btn btn-secondary dropdown-toggle search-btn col-lg-8" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button class="btn btn-secondary dropdown-toggle search-btn col-lg-8" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (click)="ShowCategories($event)">
                 I'm looking for...
             </button>
 
-            <!-- <div class="col-lg-5 dropdown-menu small-text" aria-labelledby="dropdownMenu2">
-                <a class="dropdown-item" disabled>For Mom:</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item">Activewear</a>
-                <a class="dropdown-item">Dresses</a>
-                <a class="dropdown-item">Pants</a>
-                <a class="dropdown-item">Shorts</a>
-                <a class="dropdown-item">Skirts</a>
-                <a class="dropdown-item">Sweaters</a>
-                <a class="dropdown-item">Tops</a>
-                <a class="dropdown-item">Other</a>
-
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" disabled>For Baby</a>
-                <div class="dropdown-divider"></div>
-
-                <a class="dropdown-item">Apparel</a>
-                <a class="dropdown-item">Bath</a>
-                <a class="dropdown-item">Activities & Gear</a>
-                <a class="dropdown-item">Bedding</a>
-                <a class="dropdown-item">Car Seats</a>
-                <a class="dropdown-item">Diaper Bags</a>
-                <a class="dropdown-item">Diapers</a>
-                <a class="dropdown-item">Feeding & Nursing</a>
-                <a class="dropdown-item">Health & Safety</a>
-                <a class="dropdown-item">Nursery Decor</a>
-                <a class="dropdown-item">Nursery Furniture</a>
-                <a class="dropdown-item">Nursery Storage</a>
-                <a class="dropdown-item">Playroom</a>
-                <a class="dropdown-item">Strollers</a>
-                <a class="dropdown-item">Swaddle</a>
-                <a class="dropdown-item">Blankets</a>
-                <a class="dropdown-item">Toys</a>
-                <a class="dropdown-item">Other</a>
-
-            </div> -->
             <button type="button" class="btn btn-info browse-btn" (click)="viewAll()">or browse all</button>
 
-            <!--  -->
-
-            <div class="col-lg-8 menu text-center">
+            <div class="col-lg-8 menu text-center" [hidden]="Unclicked" (click)="HideCategories($event)">
                 <div class="row softer-title-font menu-header">
                     <div class="col-lg-6">
                         For Baby:
