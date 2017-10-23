@@ -10,7 +10,6 @@ import { HomeComponent } from "../home/home.component";
 import { ItemsComponent } from "app/items/items.component";
 import { LegalComponent } from "app/legal/legal.component";
 import { LoginComponent } from "app/auth/login/login.component";
-import { MyitemsComponent } from 'app/myitems/myitems.component';
 import { NavbarComponent } from "../navbar/navbar.component";
 import { SignupComponent } from 'app/auth/signup/signup.component';
 import { OneitemComponent } from "app/items/oneitem/oneitem.component";
@@ -31,7 +30,6 @@ export const routes = [
   {path: 'admin', component: AdminComponent, canActivate: [AuthGuard] },
   {path: 'legal', component: LegalComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'myitems', component: MyitemsComponent},
   {path: 'navbar', component: NavbarComponent},
   {path: 'signup', component: SignupComponent},
   {path: 'oneitem', component: OneitemComponent},

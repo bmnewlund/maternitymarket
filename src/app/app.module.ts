@@ -25,7 +25,6 @@ import { LegalComponent } from './legal/legal.component';
 import { SignupComponent } from 'app/auth/signup/signup.component';
 import { EdititemComponent } from './edititem/edititem.component';
 import { EditprofileComponent } from './editprofile/editprofile.component';
-import { MyitemsComponent } from './myitems/myitems.component';
 import { ItemService } from './create/item.service';
 import { AuthService } from 'app/auth/auth.service';
 import { AuthGuard } from 'app/auth/auth-guard.service';
@@ -51,7 +50,6 @@ import { AngularFireAuth } from 'angularfire2/auth';
     SignupComponent,
     EdititemComponent,
     EditprofileComponent,
-    MyitemsComponent,
     DeleteitemComponent,
     LoginpageComponent
   ],
