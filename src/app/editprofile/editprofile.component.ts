@@ -7,18 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditprofileComponent implements OnInit {
 
+Deactivated = false
+
+ActivateEditProfile(e){
+this.Deactivated = !this.Deactivated
+}
+
+SaveChanges(e){
+this.Deactivated = !this.Deactivated
+
+}
+
   constructor() { }
 
   ngOnInit() {
   }
 
-}
-
-function ActivateEditProfile(){
-  //remove all disabled attributes 
-}
-
-function SaveAndDisable(){
-  //update information in database 
-  //disable fields
 }

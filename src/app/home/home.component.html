@@ -3,10 +3,67 @@
         <span class="title-font title-padding">Maternity<br>Market</span>
     </div>
     <div class="row">
-        <input type="search" class="col-lg-7 search-bar" placeholder="I'm looking for..." />
-        <button type="button" class="btn btn-info" (click)="viewAll()">or browse all</button>
+        <div class="dropdown col-lg-12">
+            <button class="btn btn-secondary dropdown-toggle search-btn col-lg-8 text" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (click)="ShowCategories($event)">
+                Shop by category...
+            </button>
+
+            <button type="button" class="btn btn-info browse-btn" (click)="viewAll()">or browse all</button>
+
+            <div class="clickable col-lg-8 menu text-center" [hidden]="Unclicked" (click)="HideCategories($event)">
+                <div class="row softer-title-font menu-header">
+                    <div class="col-lg-6 justify-content-center">
+                        <span class="category">
+                            For Baby:
+                        </span>
+                    </div>
+                    <div class="col-lg-4">
+                        <span class="category">
+                        For Mom:
+                        </span>
+                    </div>
+                </div>
+                <div class="row small-text">
+                    <div class="col-lg-3 baby-list-1">
+                        <span class="category">Apparel</span><br>
+                        <span class="category">Bath</span><br>
+                        <span class="category">Activities & Gear</span><br>
+                        <span class="category">Bedding</span><br>
+                        <span class="category">Car Seats</span><br>
+                        <span class="category">Diaper Bags</span><br>
+                        <span class="category">Diapers</span><br>
+                        <span class="category">Feeding & Nursing</span><br>
+                        <span class="category">Health & Safety</span><br>
+                    </div>
+                    <div class="col-lg-3 baby-list-2">
+                        <span class="category">Nursery Decor</span><br>
+                        <span class="category">Nursery Furniture</span><br>
+                        <span class="category">Nursery Storage</span><br>
+                        <span class="category">Playroom</span><br>
+                        <span class="category">Strollers</span><br>
+                        <span class="category">Swaddle</span><br>
+                        <span class="category">Blankets</span><br>
+                        <span class="category">Toys</span><br>
+                        <span class="category">Other</span>
+                    </div>
+                    <div class="col-lg-4 mom-list">
+                        <span class="category">Activewear</span><br>
+                        <span class="category">Dresses</span><br>
+                        <span class="category">Pants</span><br>
+                        <span class="category">Shorts</span><br>
+                        <span class="category">Skirts</span><br>
+                        <span class="category">Sweaters</span><br>
+                        <span class="category">Tops</span><br>
+                        <span class="category">Other</span>
+                    </div>
+                </div>
+            </div>
+
+            <!--  -->
+
+        </div>
     </div>
     <div class="row link-padding">
-            <a routerLink="/signup"><b>Have something you want to sell or give away?</b></a>
+            <a routerLink="/signup" class="sign-up text">Have something you want to sell or give away?</a>
     </div>
 </div>

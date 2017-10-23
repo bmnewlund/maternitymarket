@@ -1,0 +1,89 @@
+<div class="row soft-title-font">
+  my items
+</div>
+
+<div class="row">
+  <div class="col-lg-8 justify-content-lg-left">
+    <div class="row">
+
+      <div class="image-tab">
+        <div class="btns">
+          <a data-toggle="modal" data-target="#edititem-modal"><img src="../assets/edit.png"></a>
+          <a data-toggle="modal" data-target="#deleteitem-modal"><img src="../assets/delete.png"></a>
+        </div>
+        <img class="img-fill" src="../assets/test1thumb.jpeg">
+        <div class="row">
+          <div class="col-lg-8">
+          Stroller
+          </div>
+          <div class="col-lg-4 text-right">
+          $100
+          </div>
+        </div>
+      </div>
+
+      <div class="image-tab">
+          <div class="btns">
+            <a data-toggle="modal" data-target="#edititem-modal"><img src="../assets/edit.png"></a>
+            <a data-toggle="modal" data-target="#deleteitem-modal"><img src="../assets/delete.png"></a>
+          </div>
+          <img class="img-fill" src="../assets/test1thumb.jpeg">
+          <div class="row">
+            <div class="col-lg-8">
+            Stroller
+            </div>
+            <div class="col-lg-4 text-right">
+            $100
+            </div>
+          </div>
+        </div>
+
+        <div class="image-tab">
+            <div class="btns">
+              <a data-toggle="modal" data-target="#edititem-modal"><img src="../assets/edit.png"></a>
+              <a data-toggle="modal" data-target="#deleteitem-modal"><img src="../assets/delete.png"></a>
+            </div>
+            <img class="img-fill" src="../assets/test1thumb.jpeg">
+            <div class="row">
+              <div class="col-lg-8">
+              Stroller
+              </div>
+              <div class="col-lg-4 text-right">
+              $100
+              </div>
+            </div>
+          </div>
+
+
+      <!-- <div class="image-tab" *ngFor="let item in items">
+        <div class="btns">
+          <a data-toggle="modal" data-target="#edititem-modal"><img src="../assets/edit.png"></a>
+          <a data-toggle="modal" data-target="#deleteitem-modal"><img src="../assets/delete.png"></a>
+        </div>
+        <img class="img-fill" src="{{ item.imgUrl }}">
+        <div class="row">
+          <div class="col-lg-8">
+          {{ item.name }}
+          </div>
+          <div class="col-lg-4 text-right">
+          {{ item.price }}
+          </div>
+        </div>
+      </div> -->
+
+      <div class="add-tab">
+        <img class="img-fill" data-toggle="modal" data-target="#create-modal"  src="../assets/add.png">
+      </div>
+
+    </div>
+  </div>
+
+  <div class="offset-lg-1 col-lg-3 justify-content-right ml-2">
+    <app-editprofile></app-editprofile>
+  </div>
+  
+</div>
+
+<app-create></app-create>
+<app-edititem></app-edititem>
+<app-deleteitem></app-deleteitem>
