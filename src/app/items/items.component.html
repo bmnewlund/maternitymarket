@@ -6,26 +6,20 @@
   <a class="btn btn-success" (click)="BrowseAll()">more info</a><br><br> -->
   <!-- <button class="btn btn-info" href="">full view</button> -->
 <!-- </div> --> 
-
-
-<table>
-  <tr>
-    <th>Category</th>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Price</th>
-    <th>Zip</th>
-  </tr>
-  <tr *ngFor="let item of items">
-    <td>{{ item.category }}</td>
-    <td>{{ item.title }}</td>
-    <td>{{ item.description }}</td>
-    <td>{{ item.price }}</td>
-    <td>{{ item.zip }}</td>
-
-  </tr>
-
-</table>
   
-<a class="btn btn-success" (click)="getItems()">more info</a>
+<div class="row mt-5">
+    
+  <div class="image-tab col-lg-3" *ngFor="let item of items">
+    <img class="img-fill clickable" src="../assets/test1thumb.jpeg" routerLink="/oneitem">
+    <!-- <img class="img-fill" src="{{ item.imgUrl }}" routerLink="/{{ item.id }}"> -->
+    <div class="row">
+      <div class="col-lg-8">
+      {{ item.title }}
+      </div>
+      <div class="col-lg-4 text-right">
+      {{ item.price }}
+      </div>
+    </div>
+  </div>
 
+</div>
