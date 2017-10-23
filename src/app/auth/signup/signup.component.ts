@@ -1,34 +1,92 @@
-import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component, Pipe, OnInit, NgModule} from '@angular/core';
+import { ReactiveFormsModule, FormsModule, FormGroup, FormControl, Validators, FormBuilder} from '@angular/forms';
 import { AuthService } from 'app/auth/auth.service';
 import { Headers, Http, Response } from '@angular/http';
+import { AngularFireDatabase } from 'angularfire2/database';
+import {BrowserModule} from '@angular/platform-browser';
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import { Observable } from 'rxjs/Observable';
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
-export class SignupComponent implements OnInit {
 
-  constructor(private authService: AuthService, private http: Http) { }
+export class SignupComponent implements OnInit {
+  users: Observable<any[]>;
+  constructor(private authService: AuthService, private db: AngularFireDatabase) {
+    this.users = db.list('users').valueChanges();
+  }
+
+  myform: FormGroup;
+  email: FormControl;
+  password: FormControl;
+  phone: FormControl;
+  zip: FormControl;
 
   ngOnInit() {
+    this.createFormControls();
+    this.createForm();
   }
-
-  onSignup(form: NgForm) {
-    const email = form.value.email;
-    const password = form.value.password;
-    this.authService.signupUser(email, password);
+  //angularFireDatabase Service...
+  createUser(userinfo){
+    const user = this.db.list('users');
+    user.set( userinfo.phone, userinfo );
+  }
+  createFormControls() {
+    this.email = new FormControl('', [
+      Validators.required,
+      Validators.pattern("[^ @]*@[^ @]*")
+    ]);
+    this.password = new FormControl('', [
+      Validators.required,
+      Validators.minLength(8)
+    ]);
+    this.phone = new FormControl('', [
+      Validators.required,
+      Validators.minLength(10),
+      Validators.maxLength(10)
+    ]);
+    this.zip = new FormControl('', [
+      Validators.required,
+      Validators.minLength(5),
+      Validators.maxLength(5)
+    ]);
     
-    let data = {
-      email: form.value.email,
-      phone: form.value.phone,
-      zip: form.value.zip
-    }
-console.log(data)
-
-    return this.http.post('https://maternity1150.firebaseio.com/users.json',
-    data).subscribe();      
-    }
-  
   }
 
+  createForm() {
+    this.myform = new FormGroup({
+      email: this.email,
+      password: this.password,
+      phone: this.phone,
+      zip: this.zip
+    });
+  }
+
+  onSignup(data) {
+    const email = data.value.email;
+    const password = data.value.password;
+    this.authService.signupUser(email, password);
+
+    let user = {
+      email: data.value.email,
+      phone: data.value.phone,
+      zip: data.value.zip
+    }
+    this.createUser(user)
+    
+    
+    
+    // let data = {
+    //   phone: myform.value.phone,
+    //   zip: myform.value.zip
+    // }
+    console.log(data.value.zip)
+
+//     return this.http.post('https://maternity1150.firebaseio.com/users.json',
+//     data).subscribe();      
+//     }
+ }
+}

@@ -31,6 +31,7 @@ import { AuthGuard } from 'app/auth/auth-guard.service';
 import { DeleteitemComponent } from './deleteitem/deleteitem.component';
 import { LoginpageComponent } from './loginpage/loginpage.component';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -57,6 +58,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
     BrowserModule,
     RouterModule.forRoot(routes),
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     AngularFireModule.initializeApp(config)
     
