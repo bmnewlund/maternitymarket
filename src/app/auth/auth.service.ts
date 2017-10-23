@@ -12,7 +12,7 @@ export class AuthService {
     return this.afAuth.auth.createUserWithEmailAndPassword(email, password);
   }
 
-  signinUser(email: string, password: string) {
+  signinUser(email: string, password: string): Promise<any> {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password);
   }
 
@@ -26,6 +26,10 @@ export class AuthService {
 
   isAuthenticated() {
     return this.token != null;
+  }
+
+  getAuth() {
+    return this.afAuth.authState.map(auth => auth);
   }
 }
 

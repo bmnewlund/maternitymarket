@@ -34,7 +34,6 @@ import { LoginpageComponent } from './loginpage/loginpage.component';
 import { AngularFireAuth } from 'angularfire2/auth';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
