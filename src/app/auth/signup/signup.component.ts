@@ -6,6 +6,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import {BrowserModule} from '@angular/platform-browser';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import { Observable } from 'rxjs/Observable';
+import {Router, RouterModule} from "@angular/router";
 
 @Component({
   selector: 'app-signup',
@@ -15,7 +16,7 @@ import { Observable } from 'rxjs/Observable';
 
 export class SignupComponent implements OnInit {
   users: Observable<any[]>;
-  constructor(private authService: AuthService, private db: AngularFireDatabase) {
+  constructor(private authService: AuthService, private db: AngularFireDatabase, private router: Router) {
     this.users = db.list('users').valueChanges();
   }
 
@@ -34,6 +35,7 @@ export class SignupComponent implements OnInit {
     const user = this.db.list('users');
     user.set( userinfo.phone, userinfo );
   }
+
   createFormControls() {
     this.email = new FormControl('', [
       Validators.required,
@@ -53,7 +55,6 @@ export class SignupComponent implements OnInit {
       Validators.minLength(5),
       Validators.maxLength(5)
     ]);
-    
   }
 
   createForm() {
@@ -76,17 +77,9 @@ export class SignupComponent implements OnInit {
       zip: data.value.zip
     }
     this.createUser(user)
-    
-    
-    
-    // let data = {
-    //   phone: myform.value.phone,
-    //   zip: myform.value.zip
-    // }
-    console.log(data.value.zip)
+    this.router.navigate(['admin'])
+    alert('Registration was a great success!');
+    console.log('Registration was a great success!');
 
-//     return this.http.post('https://maternity1150.firebaseio.com/users.json',
-//     data).subscribe();      
-//     }
- }
+  }
 }

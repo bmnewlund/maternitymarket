@@ -29,7 +29,7 @@
   'has-success': email.valid && (email.dirty || email.touched)
 }">
 <label>Email</label>
-<input type="email" ngModel
+<input type="email"
      class="form-control"
      formControlName="email"
      required>
@@ -50,7 +50,7 @@
   'has-success': password.valid && (password.dirty || password.touched)
 }">
   <label>Password</label>
-  <input type="password" ngModel
+  <input type="password" 
      class="form-control"
      formControlName="password"
      required>
@@ -67,14 +67,14 @@
  'has-success': phone.valid && (phone.dirty || phone.touched)
 }">
  <label>Phone</label>
- <input type="text" ngModel
+ <input type="text" 
     class="form-control"
     formControlName="phone"
     required>
  <div class="form-control-feedback"
    *ngIf="phone.errors && (phone.dirty || phone.touched)">
  <p *ngIf="phone.errors.required">Phone is required</p>
- <p *ngIf="phone.errors.minlength">phone must be 10 digits long, we need another {{phone.errors.minlength.requiredLength - phone.errors.minlength.actualLength}} characters </p>
+ <p *ngIf="phone.errors.minlength">Phone must be 10 digits long, no dashes...still need {{phone.errors.minlength.requiredLength - phone.errors.minlength.actualLength}} digits </p>
  </div>
 </div>
 
@@ -84,7 +84,7 @@
  'has-success': zip.valid && (zip.dirty || zip.touched)
 }">
  <label>Zip Code</label>
- <input type="text" ngModel
+ <input type="text"
     class="form-control"
     formControlName="zip"
     required>
