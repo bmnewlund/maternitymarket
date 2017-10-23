@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
-import { AngularFireAuth } from 'angularfire2/auth'
+import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireDatabase} from 'angularfire2/database';
 import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthService {
   token: string;
 
-  constructor(private router: Router, private afAuth: AngularFireAuth) {}
+  constructor(db: AngularFireDatabase, private router: Router, private afAuth: AngularFireAuth) {}
+
+  
 
   signupUser(email: string, password: string) {
     return this.afAuth.auth.createUserWithEmailAndPassword(email, password);
