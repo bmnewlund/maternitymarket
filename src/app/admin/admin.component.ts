@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ItemService } from 'app/create/item.service';
 
 @Component({
   selector: 'app-admin',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-
-  constructor() { }
+  items: any
+  constructor(private itemService: ItemService) { }
 
   ngOnInit() {
+    this.itemService.getItems().subscribe(items =>{
+      console.log(items);
+      this.items = items;
+    })
   }
 
 }

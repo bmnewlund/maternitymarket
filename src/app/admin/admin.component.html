@@ -3,37 +3,34 @@
 </div>
 
 <div class="row">
-  <div class="col-lg-8 justify-content-lg-left">
+  <div class="col-lg-9 justify-content-center">
     <div class="row">
 
-      <div class="image-tab">
-      <!-- <div class="image-tab" *ngFor="let item in items"> -->
+      <div class="image-tab col-lg-3.5" *ngFor="let item of items">
         <div class="btns">
           <a class="clickable" data-toggle="modal" data-target="#edititem-modal"><img src="../assets/edit.png"></a>
           <a class="clickable" data-toggle="modal" data-target="#deleteitem-modal"><img src="../assets/delete.png"></a>
         </div>
         <img class="img-fill clickable" src="../assets/test1thumb.jpeg" routerLink="/oneitem">
-        <!-- <img class="img-fill" src="{{ item.imgUrl }}"> -->
+        <!-- <img class="img-fill" src="{{ item.imgUrl }}" routerLink="/{{ item.id }}"> -->
         <div class="row">
           <div class="col-lg-8">
-          Stroller
-          <!-- {{ item.name }} -->
+          {{ item.title }}
           </div>
           <div class="col-lg-4 text-right">
-          $100
-          <!-- {{ item.price }} -->
+          {{ item.price }}
           </div>
         </div>
       </div>
 
-      <div class="add-tab">
+      <div class="add-tab col-lg-2">
         <img class="clickable img-fill" data-toggle="modal" data-target="#create-modal"  src="../assets/add.png">
       </div>
 
     </div>
   </div>
 
-  <div class="offset-lg-1 col-lg-3 justify-content-right ml-2">
+  <div class="col-lg-3 justify-content-right">
     <app-editprofile></app-editprofile>
   </div>
   
