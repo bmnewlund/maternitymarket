@@ -15,8 +15,8 @@ export class CreateComponent {
     let data = {
       category: category.value,
       title: title.value,
-      price: price.value,
-      description: description.value
+      description: description.value,
+      price: price.value
     }
     console.log(category.value, title.value, price.value, description.value)
     this.itemService.createItem(data)

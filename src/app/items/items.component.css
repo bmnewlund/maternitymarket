@@ -14,3 +14,17 @@ th {
     background-color: #4CAF50;
     color: white;
 }
+
+.img-fill {
+    width: 100%;
+    height: 100%;
+}
+
+.image-tab {
+    width: 30%;
+    height: 100%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 25px;
+    margin: 10px;
+}
