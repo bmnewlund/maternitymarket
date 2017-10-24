@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ReactiveFormsModule, FormsModule, FormGroup, FormControl, Validators, FormBuilder, NgForm } from '@angular/forms';
-import { AuthService } from 'app/auth/auth.service';
+import { AuthService } from 'app/services/auth.service';
 import * as firebase from 'firebase';
 import {Router, RouterModule} from "@angular/router";
 
@@ -32,7 +32,6 @@ export class LoginComponent implements OnInit {
       Validators.required,
       Validators.minLength(8)
     ]);
-    
     
   }
   createForm() {

@@ -1,6 +1,6 @@
 import { Component, Pipe, OnInit, NgModule} from '@angular/core';
 import { ReactiveFormsModule, FormsModule, FormGroup, FormControl, Validators, FormBuilder} from '@angular/forms';
-import { AuthService } from 'app/auth/auth.service';
+import { AuthService } from 'app/services/auth.service';
 import { Headers, Http, Response } from '@angular/http';
 import { AngularFireDatabase } from 'angularfire2/database';
 import {BrowserModule} from '@angular/platform-browser';

@@ -1,7 +1,7 @@
 // this component is the ViewAll Items Component, containing all the products
 
 import { Component, OnInit } from '@angular/core';
-import { ItemService } from 'app/create/item.service';
+import { ItemService } from 'app/components/admin/create/item.service';
 
 @Component({
   selector: 'app-items',

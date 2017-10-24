@@ -3,7 +3,7 @@ import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import 'rxjs/Rx';
 import { Observable } from 'rxjs/Observable';
 import * as firebase from 'firebase';
-import { Items } from '../models/item.model';
+import { Items } from 'app/models/item.model';
 
 @Injectable()
 export class ItemService {
