@@ -34,9 +34,9 @@ export class CreateComponent {
     const file: File = event.target.files[0];
     console.log("Selected filename: ", file.name);
 
-    const metaData = {'contentType': file.type};
-    const storageRef: firebase.storage.Reference = firebase.storage().ref(('/photos/featured/url1'))
-    storageRef.put(file,metaData);
+    // const metaData = {'contentType': file.type};
+    const storageRef: firebase.storage.Reference = firebase.storage().ref((file.name))
+    storageRef.put(file);
     console.log("Uploading", file.name);
   }
 
