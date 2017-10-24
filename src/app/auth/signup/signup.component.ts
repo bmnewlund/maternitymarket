@@ -78,6 +78,7 @@ export class SignupComponent implements OnInit {
     }
     this.createUser(user)
     this.router.navigate(['admin'])
+    
     alert('Registration was a great success!');
     console.log('Registration was a great success!');
 

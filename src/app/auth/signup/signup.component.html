@@ -1,28 +1,6 @@
-
-
 <h1>Sign up for Maternity Market</h1>
 <form novalidate
 [formGroup]="myform" (ngSubmit)="onSignup(f)" #f="ngForm">
-
-<!-- <fieldset formGroupName="name">
-<div class="form-group"
-   [ngClass]="{
-  'has-danger': lastName.invalid && (lastName.dirty || lastName.touched),
-  'has-success': lastName.valid && (lastName.dirty || lastName.touched)
-}">
-  <label>Last Name</label>
-  <input type="text"
-       class="form-control"
-       formControlName="lastName"
-       required>
-  <div class="form-control-feedback"
-      *ngIf="lastName.errors && (lastName.dirty || lastName.touched)">
-    <p *ngIf="lastName.errors.required">Last Name is required</p>
-  </div>
-</div>
-</fieldset> -->
-
-
 <div class="form-group"
  [ngClass]="{
   'has-danger': email.invalid && (email.dirty || email.touched),
@@ -95,9 +73,7 @@
  </div>
 </div>
 <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Sign up</button>
-
 </form>
-
 
 
 
