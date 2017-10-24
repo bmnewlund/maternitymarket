@@ -4,6 +4,7 @@ import { AuthService } from 'app/auth/auth.service';
 import * as firebase from 'firebase';
 import {Router, RouterModule} from "@angular/router";
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
