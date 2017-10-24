@@ -6,25 +6,21 @@
   <form class="small-text form-custom">
     <div class="form-group">
       <label for="SignUpEmail">Email address</label>
-      <input type="email" class="form-control small-text tight-spacing" id="SignUpEmail" aria-describedby="emailHelp" placeholder="Enter email">
+      <input type="email" class="form-control small-text tight-spacing" id="SignUpEmail" aria-describedby="emailHelp">
       <small id="emailHelp" class="form-text text-muted">We'll hide this from buyers.</small>
     </div>
     <div class="form-group header-spacing">
+      <label for="SignUpPassword">Password</label>
+      <input type="password" class="form-control small-text tight-spacing" id="SignUpPassword">
+    </div>
+    <div class="form-group header-spacing">
         <label for="SignUpPhone">Phone number</label>
-        <input type="tel" class="form-control small-text tight-spacing" id="SignUpPhone" aria-describedby="emailHelp" placeholder="Enter phone number" >
+        <input type="tel" class="form-control small-text tight-spacing" id="SignUpPhone" aria-describedby="emailHelp">
         <small id="phoneHelp" class="form-text text-muted">This is optional. Enter your number if you'd like buyers to call or text you.</small>
     </div>
     <div class="form-group header-spacing">
-      <label for="SignUpPassword">Password</label>
-      <input type="password" class="form-control small-text tight-spacing" id="SignUpPassword" placeholder="Password">
-    </div>
-    <div class="form-group header-spacing">
-      <label for="SignUpConfirmPassword">Confirm</label>
-      <input type="password" class="form-control small-text tight-spacing" id="SignUpConfirmPassword" placeholder="Passwords must match">
-    </div>
-    <div class="form-group header-spacing">
       <label for="SignUpZip">Zip Code</label>
-      <input type="text" pattern="[0-9]{5}" class="form-control small-text tight-spacing" id="SignUpZip" placeholder="Enter zip code">
+      <input type="text" pattern="[0-9]{5}" class="form-control small-text tight-spacing" id="SignUpZip">
     </div>
 
     <button type="submit" (click)="SaveChanges($event)" class="btn btn-primary btn-sm">Save Changes</button>
