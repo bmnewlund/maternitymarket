@@ -11,14 +11,22 @@ export class HomeComponent implements OnInit {
 Unclicked = true
 
 ShowCategories(e){
-  this.Unclicked = !this.Unclicked
-  
+  this.Unclicked = !this.Unclicked 
+}
+babylist = {
+  category1: ["Apparel","Bath","Activities","Bedding","Car Seats","Diaper Bags","Diapers","Feeding & Nursing","Health & Safety"],
+  category2: ["Nursery Decor","Nursery Furniture","Nursery Storage","Playroom","Strollers","Swaddle","Blankets","Toys","Baby Other"],
+  momlist:['Activewear','Dresses','Pants','Shorts','Skirts','Sweaters','Tops','Mom Other']
 }
 
   items: any
   constructor(private itemService: ItemService) { }
 
   ngOnInit() {
+    
+    
+    
+    
   }
 
   ViewAll() {
