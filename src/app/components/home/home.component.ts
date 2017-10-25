@@ -32,4 +32,16 @@ HideCategories(e){
     })
   }
 
+  ViewByCategory(e) {
+    this.itemService.getItemsByCategory(e.target.id).subscribe(items =>{
+    console.log(e.target.id);
+    this.items = items;
+    this.Unclicked = !this.Unclicked
+    })
+  }
+
 }
+
+// grab all child elements of search menu
+// If a span is clicked then run service method
+// and also close dropdown. with this.Unclicked = !this.Unclicked

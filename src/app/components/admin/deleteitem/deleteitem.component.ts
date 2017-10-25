@@ -15,8 +15,8 @@ export class DeleteitemComponent {
     let data = {
       category: category.value,
       title: title.value,
+      price: price.value,
       description: description.value,
-      price: price.value
     }
     console.log(category.value, title.value, price.value, description.value)
     this.ItemService.deleteItem(data)
