@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ItemService } from 'app/components/admin/create/item.service';
 
 @Component({
   selector: 'app-home',
@@ -18,10 +19,17 @@ HideCategories(e){
   this.Unclicked = !this.Unclicked
 
 }
-
-  constructor() { }
+  items: any
+  constructor(private itemService: ItemService) { }
 
   ngOnInit() {
+  }
+
+  ViewAll() {
+    this.itemService.getItems().subscribe(items =>{
+      console.log(items);
+      this.items = items;
+    })
   }
 
 }

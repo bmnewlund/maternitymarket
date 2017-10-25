@@ -18,8 +18,8 @@ export class CreateComponent {
     let data = {
       category: category.value,
       title: title.value,
-      description: description.value,
       price: price.value,
+      description: description.value,
       userid: firebase.auth().currentUser.uid
     }
     console.log(data.userid)
