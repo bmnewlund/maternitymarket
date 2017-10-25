@@ -1,0 +1,84 @@
+<div class="container">
+    <div class="row">
+        <span class="title-font title-padding">Maternity<br>Market</span>
+    </div>
+    <div class="row">
+        <div class="dropdown col-lg-12">
+            <button class="btn btn-secondary dropdown-toggle search-btn col-lg-8 text" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (click)="ShowCategories($event)">
+                Shop by category...
+            </button>
+
+            <button type="button" class="btn btn-info browse-btn" (click)="ViewAll()" data-ng-show="collapse" data-target="#results">or browse all</button>
+
+            <div class="clickable col-lg-8 menu text-center" [hidden]="Unclicked" (click)="ViewByCategory($event)">
+                <div class="row softer-title-font menu-header">
+                    <div class="col-lg-6 justify-content-center">
+                        For Baby:
+                    </div>
+                    <div class="col-lg-4">
+                        For Mom:
+                    </div>
+                </div>
+                <div class="row small-text">
+                    <div class="col-lg-3 baby-list-1">
+                        <span class="category" id="Apparel">Apparel</span><br>
+                        <span class="category" id="Bath">Bath</span><br>
+                        <span class="category" id="Activities & Gear">Activities & Gear</span><br>
+                        <span class="category" id="Bedding">Bedding</span><br>
+                        <span class="category" id="Car Seats">Car Seats</span><br>
+                        <span class="category" id="Diaper Bags">Diaper Bags</span><br>
+                        <span class="category" id="Diapers">Diapers</span><br>
+                        <span class="category" id="Feeding & Nursing">Feeding & Nursing</span><br>
+                        <span class="category" id="Health & Safety">Health & Safety</span><br>
+                    </div>
+                    <div class="col-lg-3 baby-list-2">
+                        <span class="category" id="Nursery Decor">Nursery Decor</span><br>
+                        <span class="category" id="Nursery Furniture">Nursery Furniture</span><br>
+                        <span class="category" id="Nursery Storage">Nursery Storage</span><br>
+                        <span class="category" id="Playroom">Playroom</span><br>
+                        <span class="category" id="Strollers">Strollers</span><br>
+                        <span class="category" id="Swaddle">Swaddle</span><br>
+                        <span class="category" id="Blankets">Blankets</span><br>
+                        <span class="category" id="Toys">Toys</span><br>
+                        <span class="category" id="Baby Other">Baby Other</span>
+                    </div>
+                    <div class="col-lg-4 mom-list">
+                        <span class="category" id="Activewear">Activewear</span><br>
+                        <span class="category" id="Dresses">Dresses</span><br>
+                        <span class="category" id="Pants">Pants</span><br>
+                        <span class="category" id="Shorts">Shorts</span><br>
+                        <span class="category" id="Skirts">Skirts</span><br>
+                        <span class="category" id="Sweaters">Sweaters</span><br>
+                        <span class="category" id="Tops">Tops</span><br>
+                        <span class="category" id="Mom Other">Mom Other</span>
+                    </div>
+                </div>
+            </div>
+
+            <!--  -->
+
+        </div>
+    </div>
+    <div class="row link-padding">
+        <a routerLink="/signup" class="sign-up text">Have something you want to sell or give away?</a>
+    </div>
+
+    <div id="results">
+        <div class="row mt-5">
+            
+          <div class="image-tab col-lg-3" *ngFor="let item of items">
+            <img id="{{ item.key }}" class="img-fill clickable" src="../assets/test1thumb.jpeg" (click)="ViewOneItem($event)" routerLink="/oneitem">
+            <div class="row">
+              <div class="col-lg-8">
+              {{ item.title }}
+              </div>
+              <div class="col-lg-4 text-right">
+              {{ item.price }}
+              </div>
+            </div>
+          </div>
+        
+        </div>
+    </div>
+
+</div>
