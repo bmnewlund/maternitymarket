@@ -57,23 +57,25 @@
 }
 
 .baby-list-1 {
-    margin-left: 3.4em;
-    padding-left: 50px;
+    margin-left: 1.4em;
+    padding-left: 40px;
 }
 
 .baby-list-2 {
-    padding-right: 50px;
+    padding-right: 40px;
 }
 
 .mom-list {
-    padding-right: 4.5em;
+    padding-right: 2em;
 }
 
 .category:hover {
     font-weight: bold;
     color: purple;
 }
-
+.category{
+    list-style: none;
+}
 .img-fill {
     width: 100%;
     height: 100%;
