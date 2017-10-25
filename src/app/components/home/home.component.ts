@@ -37,7 +37,3 @@ ShowCategories(e){
   }
 
 }
-
-// grab all child elements of search menu
-// If a span is clicked then run service method
-// and also close dropdown. with this.Unclicked = !this.Unclicked

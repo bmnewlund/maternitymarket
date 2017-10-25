@@ -20,13 +20,10 @@ export class CreateComponent {
       title: title.value,
       price: price.value,
       description: description.value,
-      userid: firebase.auth().currentUser.uid
+      userid: firebase.auth().currentUser.uid,
+      key: null
     }
-    console.log(data.userid)
     this.itemService.createItem(data)
-    // .subscribe(
-    //   (response) => console.log(response)
-    // );
   }
 
   
