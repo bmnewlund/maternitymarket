@@ -12,11 +12,15 @@ export class ItemsComponent implements OnInit {
   items: any
   constructor(private itemService: ItemService) { }
   ngOnInit() {
+
+    }
+
+  ViewAll() {
     this.itemService.getItems().subscribe(items =>{
       console.log(items);
       this.items = items;
     })
-    
+  
   }
 
 }
