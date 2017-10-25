@@ -14,11 +14,7 @@ ShowCategories(e){
   this.Unclicked = !this.Unclicked
   
 }
-  
-HideCategories(e){
-  this.Unclicked = !this.Unclicked
 
-}
   items: any
   constructor(private itemService: ItemService) { }
 
