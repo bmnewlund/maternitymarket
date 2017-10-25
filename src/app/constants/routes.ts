@@ -26,13 +26,14 @@ export const routes = [
   {path: 'edititem', component: EdititemComponent},
   {path: 'editprofile', component: EditprofileComponent},
   {path: 'footer', component: FooterComponent},
-  {path: 'items', component: ItemsComponent},
+  {path: 'item', children:[
+    {path: ':id', component: OneitemComponent}
+  ]},
   {path: 'admin', component: AdminComponent, canActivate: [AuthGuard] },
   {path: 'legal', component: LegalComponent},
   {path: 'login', component: LoginComponent},
   {path: 'navbar', component: NavbarComponent},
   {path: 'signup', component: SignupComponent},
-  {path: 'oneitem', component: OneitemComponent},
   {path: 'loginpage', component: LoginpageComponent},
   {path: '**', redirectTo: 'signup'}
 

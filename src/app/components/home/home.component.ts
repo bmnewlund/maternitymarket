@@ -30,7 +30,6 @@ ShowCategories(e){
 
   ViewByCategory(e) {
     this.itemService.getItemsByCategory(e.target.id).subscribe(items =>{
-    console.log(e.target.id);
     this.items = items;
     this.Unclicked = !this.Unclicked
     })
