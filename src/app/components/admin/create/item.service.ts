@@ -21,8 +21,12 @@ export class ItemService {
       return this.items;
     }
 
-    getItemsByID() {
+    getItemsByUserID() {
       return this.db.list('/items', ref => ref.orderByChild('userid').equalTo(firebase.auth().currentUser.uid)).valueChanges()
+    }
+
+    getItemsByCategory(id) {
+      return this.db.list('/items', ref => ref.orderByChild('category').equalTo(id)).valueChanges()
     }
   
     deleteItem() {
