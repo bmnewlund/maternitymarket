@@ -28,6 +28,10 @@ export class ItemService {
     getItemsByCategory(id) {
       return this.db.list('/items', ref => ref.orderByChild('category').equalTo(id)).valueChanges()
     }
+
+    getItemByKey(key) {
+      return this.db.object(`items/${key}`).valueChanges()
+    }
   
     deleteItem() {
       this.itemRef.remove();
