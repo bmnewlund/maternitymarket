@@ -7,8 +7,8 @@ import { Items } from 'app/models/item.model';
 
 @Injectable()
 export class ItemService {
-  items: Observable<Items[]>;
-  itemsDB: AngularFireList<Items>;
+  items: Observable<any[]>;
+  itemsDB: AngularFireList<any>;
   itemRef: AngularFireObject<any>;
   
     constructor(public db: AngularFireDatabase) {
@@ -34,6 +34,7 @@ export class ItemService {
     }
 
     createItem(items: Items) {
-      return this.itemsDB.push(items);
+      let key = this.itemsDB.push(items).key;  
+      this.itemsDB.set(`${key}/key`, key)
     }
 }
