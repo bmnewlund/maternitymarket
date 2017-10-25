@@ -12,7 +12,7 @@ import { LegalComponent } from "app/components/footer/legal/legal.component";
 import { LoginComponent } from "app/components/auth/login/login.component";
 import { NavbarComponent } from "app/components/navbar/navbar.component";
 import { SignupComponent } from 'app/components/auth/signup/signup.component';
-import { OneitemComponent } from "app/components/items/oneitem/oneitem.component";
+import { OneitemComponent } from "app/components/oneitem/oneitem.component";
 import { AuthGuard } from 'app/services/auth-guard.service';
 import { LoginpageComponent } from "app/components/auth/loginpage/loginpage.component";
 
