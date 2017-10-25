@@ -8,7 +8,7 @@
                 Shop by category...
             </button>
 
-            <button type="button" class="btn btn-info browse-btn" (click)="viewAll()" data-toggle="collapse" data-target="#results">or browse all</button>
+            <button type="button" class="btn btn-info browse-btn" (click)="ViewAll()" data-ng-show="collapse" data-target="#results">or browse all</button>
 
             <div class="clickable col-lg-8 menu text-center" [hidden]="Unclicked" (click)="HideCategories($event)">
                 <div class="row softer-title-font menu-header">
@@ -68,7 +68,22 @@
     </div>
 
     <div id="results">
-        <app-items></app-items>
+        <div class="row mt-5">
+            
+          <div class="image-tab col-lg-3" *ngFor="let item of items">
+            <img class="img-fill clickable" src="../assets/test1thumb.jpeg" routerLink="/oneitem">
+            <!-- <img class="img-fill" src="{{ item.imgUrl }}" routerLink="/{{ item.id }}"> -->
+            <div class="row">
+              <div class="col-lg-8">
+              {{ item.title }}
+              </div>
+              <div class="col-lg-4 text-right">
+              {{ item.price }}
+              </div>
+            </div>
+          </div>
+        
+        </div>
     </div>
 
 </div>

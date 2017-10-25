@@ -7,6 +7,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import { Observable } from 'rxjs/Observable';
 import {Router, RouterModule} from "@angular/router";
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-signup',
@@ -74,13 +75,14 @@ export class SignupComponent implements OnInit {
     let user = {
       email: data.value.email,
       phone: data.value.phone,
-      zip: data.value.zip
+      zip: data.value.zip,
+      userid: firebase.auth().currentUser.uid
     }
     this.createUser(user)
     this.router.navigate(['admin'])
     
     alert('Registration was a great success!');
-    console.log('Registration was a great success!');
+    console.log(data);
 
   }
 }
