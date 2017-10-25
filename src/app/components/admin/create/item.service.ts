@@ -19,9 +19,11 @@ export class ItemService {
       return this.items;
     }
 
-    createItem(items: Items) {
-
-      return this.itemsDB.set(items.title, items);
+    getItemsByID() {
+      return this.db.list('/items', ref => ref.orderByChild('userid').equalTo(firebase.auth().currentUser.uid)).valueChanges()
     }
-}	
 
+    createItem(items: Items) {
+      return this.itemsDB.push(items);
+    }
+}
