@@ -17,7 +17,7 @@ import { routes } from "./constants/routes";
 import { FooterComponent } from 'app/components/footer/footer.component';
 import { ItemsComponent } from 'app/components/items/items.component';
 import { CreateComponent } from 'app/components/admin/create/create.component';
-import { OneitemComponent } from 'app/components/items/oneitem/oneitem.component';
+import { OneitemComponent } from 'app/components/oneitem/oneitem.component';
 import { AdminComponent } from 'app/components/admin/admin.component';
 import { ContactComponent } from 'app/components/footer/contact/contact.component';
 import { AboutComponent } from 'app/components/footer/about/about.component';
