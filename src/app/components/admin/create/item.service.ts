@@ -15,7 +15,6 @@ export class ItemService {
       this.itemsDB = this.db.list('items');
       this.items = this.itemsDB.valueChanges();
       this.itemRef = db.object('item');
-      console.log(this.itemRef);
     } 
     
     getItems() {
@@ -35,7 +34,6 @@ export class ItemService {
     }
   
     deleteItem(key) {
-      console.log(key)
       return this.db.object(`items/${key}`).remove()
     }
 
