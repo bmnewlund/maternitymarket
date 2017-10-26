@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { ItemService } from '../create/item.service';
+declare var $: any
 
 @Component({
   selector: 'app-deleteitem',
@@ -23,5 +24,7 @@ export class DeleteitemComponent {
     // .subscribe(
     //   (response) => console.log(response)
     // );
+
+    $('#deleteitem-modal').modal('hide');
   }
 }

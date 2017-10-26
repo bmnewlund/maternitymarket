@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ReactiveFormsModule, FormsModule, FormGroup, FormControl, Validators, FormBuilder, NgForm } from '@angular/forms';
 import { AuthService } from 'app/services/auth.service';
 import * as firebase from 'firebase';
-import {Router, RouterModule} from "@angular/router";
+import { Router, RouterModule } from "@angular/router";
+declare var $: any;
 
 
 @Component({
@@ -45,9 +46,9 @@ export class LoginComponent implements OnInit {
     const email = form.value.email;
     const password = form.value.password;
     this.authService.signinUser(email, password).then(() => console.log(firebase.auth().currentUser.email));
-    this.router.navigate(['admin'])
-    alert('You Are Logged In!');
+    this.router.navigate(['/admin'])
     console.log('Thanks for logging in!');
+    $('#login-modal').modal('hide');
   }
 
 }
