@@ -21,40 +21,16 @@
                 </div>
                 <div class="row small-text">
                     <div class="col-lg-3 baby-list-1">
-                        <span class="category" id="Apparel">Apparel</span><br>
-                        <span class="category" id="Bath">Bath</span><br>
-                        <span class="category" id="Activities & Gear">Activities & Gear</span><br>
-                        <span class="category" id="Bedding">Bedding</span><br>
-                        <span class="category" id="Car Seats">Car Seats</span><br>
-                        <span class="category" id="Diaper Bags">Diaper Bags</span><br>
-                        <span class="category" id="Diapers">Diapers</span><br>
-                        <span class="category" id="Feeding & Nursing">Feeding & Nursing</span><br>
-                        <span class="category" id="Health & Safety">Health & Safety</span><br>
+                        <span *ngFor="let baby of babylist.category1" id={{baby}} class="category"><br />{{baby}}</span>
                     </div>
                     <div class="col-lg-3 baby-list-2">
-                        <span class="category" id="Nursery Decor">Nursery Decor</span><br>
-                        <span class="category" id="Nursery Furniture">Nursery Furniture</span><br>
-                        <span class="category" id="Nursery Storage">Nursery Storage</span><br>
-                        <span class="category" id="Playroom">Playroom</span><br>
-                        <span class="category" id="Strollers">Strollers</span><br>
-                        <span class="category" id="Swaddle">Swaddle</span><br>
-                        <span class="category" id="Blankets">Blankets</span><br>
-                        <span class="category" id="Toys">Toys</span><br>
-                        <span class="category" id="Baby Other">Baby Other</span>
+                        <span *ngFor="let baby of babylist.category2" id={{baby}} class="category"><br />{{baby}}</span>
                     </div>
                     <div class="col-lg-4 mom-list">
-                        <span class="category" id="Activewear">Activewear</span><br>
-                        <span class="category" id="Dresses">Dresses</span><br>
-                        <span class="category" id="Pants">Pants</span><br>
-                        <span class="category" id="Shorts">Shorts</span><br>
-                        <span class="category" id="Skirts">Skirts</span><br>
-                        <span class="category" id="Sweaters">Sweaters</span><br>
-                        <span class="category" id="Tops">Tops</span><br>
-                        <span class="category" id="Mom Other">Mom Other</span>
+                        <span *ngFor="let mom of babylist.momlist" id={{mom}} class="category"><br />{{mom}}</span>
                     </div>
                 </div>
             </div>
-
             <!--  -->
 
         </div>

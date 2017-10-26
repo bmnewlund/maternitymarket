@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+declare var $ :any;
 
 @Component({
   selector: 'app-edititem',
@@ -12,4 +13,7 @@ export class EdititemComponent implements OnInit {
   ngOnInit() {
   }
 
+  editItem(){
+    $('#edititem-modal').modal('hide');
+  }
 }
