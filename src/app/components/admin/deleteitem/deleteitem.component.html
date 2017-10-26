@@ -1,3 +1,5 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
 <div class="modal fade" id="deleteitem-modal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -8,7 +10,7 @@
 
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
-          <button class="btn btn-primary" (click)="deleteItem()">Delete</button>
+          <button class="btn btn-primary" (click)="deleteItem($event)">Delete</button>
         </div>
 
       </div>

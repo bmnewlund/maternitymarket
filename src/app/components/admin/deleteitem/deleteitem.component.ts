@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { ItemService } from '../create/item.service';
+declare var $: any
 
 @Component({
   selector: 'app-deleteitem',
@@ -8,20 +9,13 @@ import { ItemService } from '../create/item.service';
   styleUrls: ['./deleteitem.component.css']
 })
 export class DeleteitemComponent {
-  ItemService: any;
+@Input() key: any;
 
   constructor(private itemService: ItemService, db: AngularFireDatabase) {}
-  deleteItem(category, title, price, description) {
-    let data = {
-      category: category.value,
-      title: title.value,
-      price: price.value,
-      description: description.value,
-    }
-    console.log(category.value, title.value, price.value, description.value)
-    this.ItemService.deleteItem(data)
-    // .subscribe(
-    //   (response) => console.log(response)
-    // );
+  deleteItem() {
+    this.itemService.deleteItem(this.key.keyId)
+
+    $('#deleteitem-modal').modal('hide');
+
   }
 }
