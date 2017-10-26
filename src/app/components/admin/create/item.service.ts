@@ -11,34 +11,34 @@ export class ItemService {
   itemsDB: AngularFireList<any>;
   itemRef: AngularFireObject<any>;
   
-    constructor(public db: AngularFireDatabase) {
-      this.itemsDB = this.db.list('items');
-      this.items = this.itemsDB.valueChanges();
-      this.itemRef = db.object('item');
-    } 
-    
-    getItems() {
-      return this.items;
-    }
-
-    getItemsByUserID() {
-      return this.db.list('/items', ref => ref.orderByChild('userid').equalTo(firebase.auth().currentUser.uid)).valueChanges()
-    }
-
-    getItemsByCategory(id) {
-      return this.db.list('/items', ref => ref.orderByChild('category').equalTo(id)).valueChanges()
-    }
-
-    getItemByKey(key) {
-      return this.db.object(`items/${key}`).valueChanges()
-    }
+  constructor(public db: AngularFireDatabase) {
+    this.itemsDB = this.db.list('items');
+    this.items = this.itemsDB.valueChanges();
+    this.itemRef = db.object('item');
+  }
   
-    deleteItem(key) {
-      return this.db.object(`items/${key}`).remove()
-    }
+  getItems() {
+    return this.items;
+  }
 
-    createItem(items: Items) {
-      let key = this.itemsDB.push(items).key;  
-      this.itemsDB.set(`${key}/key`, key)
-    }
+  getItemsByUserID() {
+    return this.db.list('/items', ref => ref.orderByChild('userid').equalTo(firebase.auth().currentUser.uid)).valueChanges()
+  }
+
+  getItemsByCategory(id) {
+    return this.db.list('/items', ref => ref.orderByChild('category').equalTo(id)).valueChanges()
+  }
+
+  getItemByKey(key) {
+    return this.db.object(`items/${key}`).valueChanges()
+  }
+
+  deleteItem(key) {
+    return this.db.object(`items/${key}`).remove()
+  }
+
+  createItem(items: Items) {
+    let key = this.itemsDB.push(items).key;  
+    this.itemsDB.set(`${key}/key`, key)
+  }
 }

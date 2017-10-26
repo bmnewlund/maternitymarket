@@ -1,4 +1,7 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script
+src="https://code.jquery.com/jquery-2.2.4.min.js"
+integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+crossorigin="anonymous"></script>
 
 <div class="modal fade" id="create-modal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -69,7 +72,7 @@
 
             <label for="image">Upload Image</label>
             <div class="form-group">
-              <input type="file" id="image" (change)="itemImageSelected($event)" #image>
+              <input type="file" id="image" (change)="ImageSelected($event)" #image>
               <button type="btn btn-primary" id="uploadButton">Upload</button>
             </div>
 
