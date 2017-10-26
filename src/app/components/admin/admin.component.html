@@ -10,6 +10,7 @@
         <div class="btns">
           <a class="clickable" data-toggle="modal" data-target="#edititem-modal"><img src="../assets/edit.png"></a>
           <a class="clickable" data-toggle="modal" data-target="#deleteitem-modal"><img src="../assets/delete.png"></a>
+          <app-deleteitem [key] = "{ keyId: item.key }"></app-deleteitem>
         </div>
         <img class="img-fill clickable" src="../assets/test1thumb.jpeg" routerLink="/oneitem">
         <!-- <img class="img-fill" src="{{ item.imgUrl }}" routerLink="/{{ item.id }}"> -->
@@ -38,4 +39,3 @@
 
 <app-create></app-create>
 <app-edititem></app-edititem>
-<app-deleteitem></app-deleteitem>

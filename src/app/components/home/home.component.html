@@ -68,6 +68,7 @@
             
           <div class="image-tab col-lg-3" *ngFor="let item of items">
             <img id="{{ item.key }}" class="img-fill clickable" src="../assets/test1thumb.jpeg" routerLink="/item/{{ item.key }}">
+            {{item.value}}
             <div class="row mt-2">
               <div class="col-lg-9">
               {{ item.title }}
