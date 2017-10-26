@@ -5,3 +5,7 @@
 .form-input {
     font-size: 13px;
 }
+
+.error {
+    color: red;
+}
