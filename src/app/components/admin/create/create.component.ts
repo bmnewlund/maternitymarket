@@ -4,6 +4,7 @@ import { ItemService } from './item.service';
 import 'rxjs/add/operator/map';
 import * as firebase from 'firebase';
 import { AngularFireDatabase } from 'angularfire2/database';
+declare var $ :any;
 
 @Component({
   selector: 'app-create',
@@ -24,6 +25,7 @@ export class CreateComponent {
       key: null
     }
     this.itemService.createItem(data)
+    $('#create-modal').modal('hide');
   }
 
   
