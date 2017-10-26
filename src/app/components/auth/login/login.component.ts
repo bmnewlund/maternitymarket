@@ -45,10 +45,13 @@ export class LoginComponent implements OnInit {
   onSignin(form: NgForm) {
     const email = form.value.email;
     const password = form.value.password;
-    this.authService.signinUser(email, password).then(() => console.log(firebase.auth().currentUser.email));
-    this.router.navigate(['/admin'])
-    console.log('Thanks for logging in!');
-    $('#login-modal').modal('hide');
-  }
 
+    this.authService.signinUser(email, password).then(() => {
+      $('#login-modal').modal('hide');
+      this.router.navigate(['/admin'])
+    }).catch(error => {
+      console.log(error.message)
+      $('#log-in-error').removeClass('invisible');
+    })
+  }
 }
