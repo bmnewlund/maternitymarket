@@ -23,10 +23,6 @@ babylist = {
   constructor(private itemService: ItemService) { }
 
   ngOnInit() {
-    
-    
-    
-    
   }
 
   ViewAll() {
