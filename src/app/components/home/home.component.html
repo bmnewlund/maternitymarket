@@ -21,24 +21,16 @@
                 </div>
                 <div class="row small-text">
                     <div class="col-lg-3 baby-list-1">
-                        <ul>
-                            <li *ngFor="let baby of babylist.category1" id={{baby}} class="category" >{{baby}}</li>
-                        </ul>
-                    
+                        <span *ngFor="let baby of babylist.category1" id={{baby}} class="category"><br />{{baby}}</span>
                     </div>
                     <div class="col-lg-3 baby-list-2">
-                        <ul>
-                            <li *ngFor="let baby of babylist.category2" id={{baby}} class="category" >{{baby}}</li>
-                        </ul>
+                        <span *ngFor="let baby of babylist.category2" id={{baby}} class="category"><br />{{baby}}</span>
                     </div>
                     <div class="col-lg-4 mom-list">
-                        <ul>
-                            <li *ngFor="let mom of babylist.momlist" id={{mom}} class="category" >{{mom}}</li>
-                        </ul>
+                        <span *ngFor="let mom of babylist.momlist" id={{mom}} class="category"><br />{{mom}}</span>
                     </div>
                 </div>
             </div>
-
             <!--  -->
 
         </div>
