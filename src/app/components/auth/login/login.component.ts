@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
     const password = form.value.password;
     this.authService.signinUser(email, password).then(() => console.log(firebase.auth().currentUser.email));
     this.router.navigate(['admin'])
-    alert('You Are Logged In!');
+    
     console.log('Thanks for logging in!');
   }
 

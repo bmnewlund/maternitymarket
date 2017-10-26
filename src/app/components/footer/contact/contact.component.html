@@ -26,34 +26,25 @@
     </div>
 </div> -->
 <!-- End Contact form -->
-<div *ngIf="!name; else forminfo">
-        <form [formGroup]="rForm" (ngSubmit)="addPost(rForm.value)">
-          <div class="form-container">
-            <div class="row columns">
-              <h1>We love questions and comments!</h1>
-              <label>Name
-                <input type="text" formControlName="name">
-              </label>
+<div id="contactform">
+    <h1>We love comments and questions!</h1>
+    <br>
+<section id="contact">
+        
+    <div class="container">
       
-              <label>Description
-                <textarea  formControlName="description"></textarea>
-              </label>
-      
-              <label for="validate">Minimum of 3 Characters</label>
-              <input type="checkbox" name="validate" formControlName="validate" value="1"> On
-              
-              <input type="submit" class="button expanded" value="Submit Form" [disabled]="!rForm.valid">
-            </div>
-          </div>
+        <form name="htmlform">
+        
+        <input type="text" name="name" placeholder="NAME" required>
+            
+        <input  type="email" name="email" placeholder="MAIL" required>
+            
+        <textarea name="comments" placeholder="MESSAGE" required ></textarea>
+            
+        <button name="send" type="submit" class="submit">SEND</button>
+            
         </form>
-      </div>
-      
-      <ng-template #forminfo>
-        <div class="form-container">
-          <div class="row columns">
-              <h1>{{ name }}</h1>
-      
-              <p>{{ description }}</p>
-          </div>
-        </div>
-      </ng-template>
+       
+    </div>
+</section>
+</div>
