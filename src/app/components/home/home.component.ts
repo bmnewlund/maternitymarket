@@ -27,7 +27,6 @@ babylist = {
 
   ViewAll() {
     this.itemService.getItems().subscribe(items =>{
-      console.log(items);
       this.items = items;
     })
   }

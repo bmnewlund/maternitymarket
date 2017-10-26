@@ -13,8 +13,13 @@ declare var $ :any;
 })
 
 export class CreateComponent {
-  
+
   constructor(private itemService: ItemService, db: AngularFireDatabase) {}
+
+  freeItem(){
+    $('#price').attr('disabled');
+  }
+
   createItem(category, title, price, description) {
     let data = {
       category: category.value,
@@ -32,12 +37,10 @@ export class CreateComponent {
 
   itemImageSelected(event: any) {
     const file: File = event.target.files[0];
-    console.log("Selected filename: ", file.name);
 
     // const metaData = {'contentType': file.type};
     const storageRef: firebase.storage.Reference = firebase.storage().ref((file.name))
     storageRef.put(file);
-    console.log("Uploading", file.name);
   }
 
 

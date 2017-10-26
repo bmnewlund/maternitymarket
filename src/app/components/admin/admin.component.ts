@@ -12,7 +12,6 @@ export class AdminComponent implements OnInit {
 
   ngOnInit() {
     this.itemService.getItemsByUserID().subscribe(items =>{
-      console.log(items);
       this.items = items;
     })
   }

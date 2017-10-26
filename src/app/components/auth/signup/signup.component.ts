@@ -82,7 +82,6 @@ export class SignupComponent implements OnInit {
     this.router.navigate(['admin'])
     
     alert('Registration was a great success!');
-    console.log(data);
 
   }
 }
