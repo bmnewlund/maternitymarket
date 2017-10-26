@@ -3,10 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AngularFireModule } from "angularfire2";
-import { AngularFireDatabase } from 'angularfire2/database';
-
+import { AngularFireDatabase, AngularFireDatabaseModule } from 'angularfire2/database';
 import { config } from '../environments/environment';
-
 import { AppComponent } from './app.component';
 import { LoginComponent } from 'app/components/auth/login/login.component';
 import { HomeComponent } from 'app/components/home/home.component';
@@ -31,6 +29,9 @@ import { AuthGuard } from 'app/services/auth-guard.service';
 import { DeleteitemComponent } from 'app/components/admin/deleteitem/deleteitem.component';
 import { LoginpageComponent } from 'app/components/auth/loginpage/loginpage.component';
 import { AngularFireAuth } from 'angularfire2/auth';
+import {AngularFireAuthModule} from 'angularfire2/auth';
+import * as firebase from 'firebase';
+
 
 
 @NgModule({
@@ -60,7 +61,6 @@ import { AngularFireAuth } from 'angularfire2/auth';
     ReactiveFormsModule,
     HttpModule,
     AngularFireModule.initializeApp(config)
-    
   ],
   providers: [
     ItemService, 

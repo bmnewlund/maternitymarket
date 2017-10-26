@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { ReactiveFormsModule, FormsModule, FormGroup, FormControl, Validators, FormBuilder, NgForm } from '@angular/forms';
 import { AuthService } from 'app/services/auth.service';
+import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase';
 import { Router, RouterModule } from "@angular/router";
 declare var $: any;
-
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
-
-  constructor(private authService: AuthService, private router: Router) { }
+export class LoginComponent implements OnInit{
+  constructor(public afAuth: AngularFireAuth, private router: Router, private authService: AuthService) {
+  }
 
   ngOnInit() {
     this.createFormControls();
@@ -45,7 +45,6 @@ export class LoginComponent implements OnInit {
   onSignin(form: NgForm) {
     const email = form.value.email;
     const password = form.value.password;
-
     this.authService.signinUser(email, password).then(() => {
       $('#login-modal').modal('hide');
       this.router.navigate(['/admin'])

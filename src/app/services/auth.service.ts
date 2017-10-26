@@ -1,19 +1,21 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { AngularFireDatabase} from 'angularfire2/database';
-import { Router } from '@angular/router';
+import {AngularFireDatabaseModule, AngularFireDatabase, AngularFireList, } from "angularfire2/database";
+import {CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router} from '@angular/router';
+import * as firebase from 'firebase';
 
 @Injectable()
 export class AuthService {
   token: string;
+  authState: any = null;
+  user: any[];
 
-  constructor(db: AngularFireDatabase, private router: Router, private afAuth: AngularFireAuth) {}
+  constructor(private db: AngularFireDatabase, private router: Router, private afAuth: AngularFireAuth) {}
 
-  
-
-  signupUser(email: string, password: string) {
-    return this.afAuth.auth.createUserWithEmailAndPassword(email, password);
-  }
+  // signupUser(email: string, password: string) {
+  //   console.log(email, password)
+  //   return this.afAuth.auth.createUserWithEmailAndPassword(email, password);
+  // }
 
   signinUser(email: string, password: string): Promise<any> {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password);
@@ -28,12 +30,43 @@ export class AuthService {
   }
 
   isAuthenticated() {
-    return this.token != null;
+    return this.token !== null;
   }
 
   getAuth() {
     return this.afAuth.authState.map(auth => auth);
   }
+
+  get currentUserId(): string {
+    return this.isAuthenticated ? this.authState.uid: '';
+}
+
+//SIGN UP
+signupUser(user, password) {
+  return this.afAuth.auth.createUserWithEmailAndPassword(user.email, password)
+  .then((newUser) => {
+      this.authState = newUser;
+this.updateUserData(user);
+this.router.navigate(['/admin']);
+  })
+.catch(error => console.log(error));
+}
+  //// Helpers ////
+  private updateUserData(user): void {
+    // Writes email to realtime db
+    // useful if your app displays information about users or for admin features
+    let path = `users/${this.currentUserId}`; // Endpoint on firebase
+    let data = {
+        email: this.authState.email,
+        uid: this.authState.uid,
+        phone: user.phone,
+        zip: user.zip
+    }
+    this.db.list("users").set(this.currentUserId, data)
+    .catch(error => console.log(error));
+    }
+
+
 }
 
 
