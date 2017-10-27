@@ -8,7 +8,7 @@
         'has-success': email.valid && (email.dirty || email.touched)
         }">
         <label class="form-header">Email</label>
-        <input type="email" class="form-control form-input" formControlName="email" required>
+        <input type="email" class="form-control form-input form-group" formControlName="email" required>
         <small id="emailHelp" class="form-text text-muted form-input">We'll hide this from buyers.</small>
         <div class="form-control-feedback" *ngIf="email.errors && (email.dirty || email.touched)">
           <p *ngIf="email.errors.required" class="form-input">Email is required</p>
@@ -46,7 +46,7 @@
         </div>
       </div>
 
-      <button type="submit" class="btn btn-primary" [disabled]="!f.valid">sign up</button>
+      <button type="submit" class="btn btn-primary">sign up</button>
     
     </form>
   </div>

@@ -12,11 +12,6 @@ export class AuthService {
 
   constructor(private db: AngularFireDatabase, private router: Router, private afAuth: AngularFireAuth) {}
 
-  // signupUser(email: string, password: string) {
-  //   console.log(email, password)
-  //   return this.afAuth.auth.createUserWithEmailAndPassword(email, password);
-  // }
-
   signinUser(email: string, password: string): Promise<any> {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password);
   }
@@ -46,10 +41,10 @@ signupUser(user, password) {
   return this.afAuth.auth.createUserWithEmailAndPassword(user.email, password)
   .then((newUser) => {
       this.authState = newUser;
-this.updateUserData(user);
-this.router.navigate(['/admin']);
+      this.updateUserData(user);
+      this.router.navigate(['/admin']);
   })
-.catch(error => console.log(error));
+  .catch(error => console.log(error));
 }
   //// Helpers ////
   private updateUserData(user): void {

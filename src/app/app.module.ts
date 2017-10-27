@@ -32,8 +32,6 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import * as firebase from 'firebase';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
