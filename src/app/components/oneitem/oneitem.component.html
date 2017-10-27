@@ -19,25 +19,23 @@
       </div>
     </div>
     <div class="col-lg-7">
-      <div class="img-box">
-        <div>
-        <img class="img-fill" src="{{ item?.imgurl }}">
+      <div>
+        <div class="img-box">
+        <img style='height: 100%; width: 100%; object-fit: contain' src="{{ item?.imgurl }}">
         </div>
         <div class="contact-box text"> 
-          Email: jon_arbuckle@aol.com<br>
-          Phone: 317-228-7454<br>
-          Zip: 46203
+          Email: {{ user.email }}<br>
+          Phone: {{ user.phone }}<br>
+          Zip: {{ user.zip }}
         </div>
       </div>
     </div>
   </div>
 
   <div class="row justify-content-lg-center buttons">
-    <button class="btn btn-primary prev-next-btns"><</button>
     <button class="btn btn-secondary back-link text">
-      back to results
+      back to search
     </button>
-    <button class="btn btn-primary prev-next-btns">></button>
   </div>
 </div>
 
