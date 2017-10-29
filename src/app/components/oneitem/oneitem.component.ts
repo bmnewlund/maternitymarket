@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemService } from 'app/components/admin/create/item.service';
+import { UserService } from 'app/services/user.service';
 import { Router, ActivatedRoute } from '@angular/router'
 
 @Component({
@@ -10,9 +11,9 @@ import { Router, ActivatedRoute } from '@angular/router'
 export class OneitemComponent implements OnInit {
 
   id: string
-  item
+  item: any
 
-  constructor(private itemService: ItemService, private CurrentURL: ActivatedRoute) { 
+  constructor(private itemService: ItemService, private CurrentURL: ActivatedRoute, private userService: UserService) { 
 
   }
 
@@ -23,8 +24,11 @@ export class OneitemComponent implements OnInit {
     })
 
     this.itemService.getItemByKey(this.id).subscribe(items =>{
+    this.item = items
 
-    this.item = items 
+    this.userService.getUserByUserID(this.item.userid).subscribe(user =>{
+      console.log(user[0])
+    })
 
     })
   }

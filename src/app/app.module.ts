@@ -30,6 +30,7 @@ import { DeleteitemComponent } from 'app/components/admin/deleteitem/deleteitem.
 import { LoginpageComponent } from 'app/components/auth/loginpage/loginpage.component';
 import { AngularFireAuth } from 'angularfire2/auth';
 import {AngularFireAuthModule} from 'angularfire2/auth';
+import { UserService } from 'app/services/user.service';
 import * as firebase from 'firebase';
 
 @NgModule({
@@ -65,7 +66,8 @@ import * as firebase from 'firebase';
     AuthService, 
     AuthGuard, 
     AngularFireDatabase,
-    AngularFireAuth
+    AngularFireAuth,
+    UserService
   ],
   bootstrap: [AppComponent]
 })
