@@ -9,3 +9,7 @@
 .error {
     color: red;
 }
+
+.squeeze-top{
+    margin-top: -20px;
+}

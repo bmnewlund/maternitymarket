@@ -53,4 +53,11 @@ export class LoginComponent implements OnInit{
       $('#log-in-error').removeClass('invisible');
     })
   }
+
+  // keyDownFunction(form: NgForm) {
+  //   if(event.keyCode == 13) {
+  //     onSignin(form: NgForm)
+  //   }
+  // }
+
 }

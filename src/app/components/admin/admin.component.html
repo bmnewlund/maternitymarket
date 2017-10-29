@@ -4,7 +4,7 @@
 
 <div class="row">
   <div class="col-lg-9 justify-content-center">
-    <div class="row">
+    <div class="row small-text">
 
       <div class="image-tab col-lg-3.5" *ngFor="let item of items">
         <div class="btns">
@@ -13,12 +13,11 @@
           <app-deleteitem [key] = "{ keyId: item.key }"></app-deleteitem>
         </div>
         <img class="img-fill clickable" src="{{ item.imgurl }}" routerLink="/item/{{ item.key }}">
-        <!-- <img class="img-fill" src="{{ item.imgUrl }}" routerLink="/{{ item.id }}"> -->
-        <div class="row">
-          <div class="col-lg-8">
+        <div class="row mt-2">
+          <div class="col-lg-9">
           {{ item.title }}
           </div>
-          <div class="col-lg-4 text-right">
+          <div class="col-lg-3 text-right">
           {{ item.price }}
           </div>
         </div>

@@ -1,3 +1,4 @@
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <div class="container">
     <div class="row">
         <span class="title-font title-padding">Maternity<br>Market</span>
@@ -5,7 +6,7 @@
     <div class="row">
         <div class="dropdown col-lg-12">
             <button class="btn btn-secondary dropdown-toggle search-btn col-lg-8 text" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (click)="ShowCategories($event)">
-                Shop by category...
+                <span id="category-bar">Shop by category...</span>
             </button>
 
             <button type="button" class="btn btn-info browse-btn" (click)="ViewAll()" data-ng-show="collapse" data-target="#results">or browse all</button>
