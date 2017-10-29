@@ -62,7 +62,7 @@ crossorigin="anonymous"></script>
             <div class="input-group">
               <span class="input-group-addon">$</span>
               <input type="text" class="form-control" aria-label="Text input with radio button" id="price" #price>
-              <span (click)="freeItem()" class="input-group-addon">Free</span>
+              <span id="free-item" class="input-group-addon clickable">Free</span>
             </div>
         
             <label for="description" class="pt-3">Description</label>
@@ -73,12 +73,11 @@ crossorigin="anonymous"></script>
             <label for="image">Upload Image</label>
             <div class="form-group">
               <input type="file" id="image" (change)="ImageSelected($event)" #image>
-              <button type="btn btn-primary" id="uploadButton">Upload</button>
             </div>
 
             <div class="modal-footer">
               <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
-              <button class="btn btn-primary" (click)="createItem(category, title, price, description, zip, image)">Submit</button>
+              <button class="btn btn-primary" (click)="createItem(category, title, price, description, zip, image)" id="submit">Submit</button>
             </div>
 
           </form>

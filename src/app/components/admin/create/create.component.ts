@@ -18,14 +18,17 @@ urlForm: string
 
   constructor(private itemService: ItemService, db: AngularFireDatabase) {}
 
-  freeItem(){
-    console.log("first");
-    $('#price').attr('disabled');
-    console.log("second");
+  ngAfterViewInit(){
+    $(document).ready(function(){
+      $("#free-item").click(function(){
+        $("#price").attr('disabled');
+        $("#price").val('Free');
+      });
+    });
   }
 
   createItem(category, title, price, description) {
-    console.log(this.urlForm)
+    console.log(this)
     let data = {
       category: category.value,
       title: title.value,
@@ -36,8 +39,13 @@ urlForm: string
       imgurl: this.urlForm
     }
     this.itemService.createItem(data)
-
     $('#create-modal').modal('hide');
+    $("#category").val('')
+    $("#title").val('')
+    $("#price").val('')
+    $("#description").val('')
+    $("#image").val('')
+
   }
 
   ImageSelected(event: any){
