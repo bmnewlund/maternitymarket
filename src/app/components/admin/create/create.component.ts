@@ -21,14 +21,12 @@ urlForm ='';
   ngAfterViewInit(){
     $(document).ready(function(){
       $("#free-item").click(function(){
-        $("#price").attr('disabled');
         $("#price").val('Free');
       });
     });
   }
 
   createItem(category, title, price, description) {
-    console.log(this)
     let data = {
       category: category.value,
       title: title.value,

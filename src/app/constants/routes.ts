@@ -16,7 +16,6 @@ import { OneitemComponent } from "app/components/oneitem/oneitem.component";
 import { AuthGuard } from 'app/services/auth-guard.service';
 import { LoginpageComponent } from "app/components/auth/loginpage/loginpage.component";
 
-
 export const routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},

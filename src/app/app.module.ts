@@ -52,7 +52,7 @@ import * as firebase from 'firebase';
     EdititemComponent,
     EditprofileComponent,
     DeleteitemComponent,
-    LoginpageComponent
+    LoginpageComponent,
   ],
   imports: [
     BrowserModule,

@@ -19,6 +19,14 @@ export class EdititemComponent implements OnInit {
     // this.item = this.itemService.itemRef;
    }
 
+  ngAfterViewInit(){
+    $(document).ready(function(){
+      $("#free-item").click(function(){
+        $("#price").val('Free');
+      });
+    });
+  }
+
   ngOnInit() {
     // this.itemService.getItems().subscribe(item => {
     //   console.log(item);

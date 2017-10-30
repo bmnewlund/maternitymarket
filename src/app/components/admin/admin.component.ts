@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireDatabase } from 'angularfire2/database';
 import { ItemService } from 'app/components/admin/create/item.service';
+declare var $: any
 
 @Component({
   selector: 'app-admin',
@@ -9,7 +11,20 @@ import { ItemService } from 'app/components/admin/create/item.service';
 export class AdminComponent implements OnInit {
 
   items: any
-  constructor(private itemService: ItemService) { }
+  key: any;
+  itemKey
+
+  constructor(private itemService: ItemService, db: AngularFireDatabase) {}
+
+
+  deleteItem(e) {
+    this.itemKey = e.target.id
+  }
+
+  confirmDelete(){
+    this.itemService.deleteItem(this.itemKey)
+    $('#deleteitem-modal').modal('hide');
+  }
 
   ngOnInit() {
     this.itemService.getItemsByUserID().subscribe(items =>{

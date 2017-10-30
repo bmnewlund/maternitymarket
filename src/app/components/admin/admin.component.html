@@ -9,9 +9,30 @@
       <div class="image-tab col-lg-3.5" *ngFor="let item of items">
         <div class="btns">
           <a class="clickable" data-toggle="modal" data-target="#edititem-modal"><img src="../assets/edit.png"></a>
-          <a class="clickable" data-toggle="modal" data-target="#deleteitem-modal"><img src="../assets/delete.png"></a>
-          <app-deleteitem [key] = "{ keyId: item.key }"></app-deleteitem>
+          
+          <a class="clickable" data-toggle="modal" data-target="#deleteitem-modal" (click)="deleteItem($event)"><img src="../assets/delete.png" id="{{ item.key }}"></a>
+          
+<!--           <app-deleteitem [key] = "{ keyId: item.key }"></app-deleteitem> -->
           <app-edititem [key] = "{ keyId: item.key }"></app-edititem>
+
+
+          <div class="modal fade" id="deleteitem-modal" tabindex="-1" role="dialog" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+          
+                  <div class="modal-body text">
+                    Are you sure you want to delete this item?
+                  </div>
+          
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+                    <button class="btn btn-primary" (click)="confirmDelete()">Delete</button>
+                  </div>
+          
+                </div>
+              </div>
+            </div>
+
         </div>
         <img class="img-fill clickable" src="{{ item.imgurl }}" routerLink="/item/{{ item.key }}">
         <div class="row mt-2">
