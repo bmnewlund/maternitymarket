@@ -14,8 +14,6 @@ export class DeleteitemComponent {
   constructor(private itemService: ItemService, db: AngularFireDatabase) {}
   deleteItem() {
     this.itemService.deleteItem(this.key.keyId)
-
     $('#deleteitem-modal').modal('hide');
-
   }
 }

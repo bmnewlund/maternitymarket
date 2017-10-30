@@ -27,7 +27,6 @@ urlForm: string
   }
 
   createItem(category, title, price, description) {
-    console.log(this)
     let data = {
       category: category.value,
       title: title.value,

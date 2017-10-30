@@ -33,7 +33,6 @@ export class OneitemComponent implements OnInit {
 
       this.userService.getUserByUserID(this.item.userid).subscribe(user =>{
         this.user = user[0]
-        console.log(this.item.category)
       })
     })
   }
