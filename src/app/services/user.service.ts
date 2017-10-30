@@ -17,7 +17,6 @@ export class UserService {
   }
 
   getUserByUserID(ID) {
-    console.log()
     return this.db.list('/users', ref => ref.orderByChild('uid').equalTo(ID)).valueChanges();
   }
 }

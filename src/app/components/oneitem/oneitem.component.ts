@@ -12,6 +12,11 @@ export class OneitemComponent implements OnInit {
 
   id: string
   item: any
+  user: any = {
+    email: "",
+    phone: "",
+    zip: ""
+  }
 
   constructor(private itemService: ItemService, private CurrentURL: ActivatedRoute, private userService: UserService) { 
 
@@ -27,7 +32,8 @@ export class OneitemComponent implements OnInit {
     this.item = items
 
     this.userService.getUserByUserID(this.item.userid).subscribe(user =>{
-      console.log(user[0])
+      this.user = user[0]
+      console.log(this.item)
     })
 
     })
