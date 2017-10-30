@@ -1,3 +1,4 @@
+import { FirebaseObjectObservable } from 'angularfire2/database-deprecated';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -9,7 +10,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from 'app/components/auth/login/login.component';
 import { HomeComponent } from 'app/components/home/home.component';
 import { NavbarComponent } from 'app/components/navbar/navbar.component';
-
+import { Item } from 'app/models/item.model';
 import { RouterModule } from "@angular/router";
 import { routes } from "./constants/routes";
 import { FooterComponent } from 'app/components/footer/footer.component';
@@ -65,6 +66,7 @@ import * as firebase from 'firebase';
     ItemService, 
     AuthService, 
     AuthGuard, 
+    //FirebaseObjectObservable,
     AngularFireDatabase,
     AngularFireAuth,
     UserService

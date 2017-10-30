@@ -14,7 +14,7 @@ declare var $ :any;
 
 export class CreateComponent {
 
-urlForm: string
+urlForm ='';
 
   constructor(private itemService: ItemService, db: AngularFireDatabase) {}
 
@@ -38,6 +38,7 @@ urlForm: string
       key: null,
       imgurl: this.urlForm
     }
+  
     this.itemService.createItem(data)
     $('#create-modal').modal('hide');
     $("#category").val('')

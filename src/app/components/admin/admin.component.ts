@@ -7,6 +7,7 @@ import { ItemService } from 'app/components/admin/create/item.service';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
+
   items: any
   constructor(private itemService: ItemService) { }
 

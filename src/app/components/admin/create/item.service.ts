@@ -1,20 +1,25 @@
+//import { FirebaseObjectObservable } from 'angularfire2/database-deprecated';
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList, AngularFireObject } from 'angularfire2/database';
 import 'rxjs/Rx';
 import { Observable } from 'rxjs/Observable';
 import * as firebase from 'firebase';
-import { Items } from 'app/models/item.model';
+import { Item } from 'app/models/item.model';
 
 @Injectable()
 export class ItemService {
-  items: Observable<any[]>;
+
+  //itemsCollection: AngularFireObject<Item>;
+  items: any;
+  //itemDoc: AngularFireObject<Item>;
+  
   itemsDB: AngularFireList<any>;
-  itemRef: AngularFireObject<any>;
+  // itemRef: AngularFireObject<Item>;
+  //item$: FirebaseObjectObservable<any>;
   
   constructor(public db: AngularFireDatabase) {
-    this.itemsDB = this.db.list('items');
-    this.items = this.itemsDB.valueChanges();
-    this.itemRef = db.object('item');
+    this.itemsDB = this.db.list(`items`); 
+    //this.items = this.db.('items', ref=> ref.orderBy('title'))
   }
   
   getItems() {
@@ -37,8 +42,15 @@ export class ItemService {
     return this.db.object(`items/${key}`).remove()
   }
 
-  createItem(items: Items) {
-    let key = this.itemsDB.push(items).key;  
-    this.itemsDB.set(`${key}/key`, key)
+  updateItem(item) {
+    console.log(item)
+    this.itemsDB.update(item.key, item);
+  
+  }
+
+  createItem(items: Item) {
+    console.log(items);
+    let key = this.itemsDB.push(items).key;
+    this.itemsDB.set(`${key}/key`, key);
   }
 }
