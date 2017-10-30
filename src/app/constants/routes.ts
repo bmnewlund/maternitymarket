@@ -3,7 +3,7 @@ import { AboutComponent } from "app/components/footer/about/about.component";
 import { AdminComponent } from "app/components/admin/admin.component";
 import { ContactComponent } from "app/components/footer/contact/contact.component";
 import { CreateComponent } from "app/components/admin/create/create.component";
-import { EdititemComponent } from 'app/components/admin/edititem/edititem.component';
+// import { EdititemComponent } from 'app/components/admin/edititem/edititem.component';
 import { EditprofileComponent } from 'app/components/admin/editprofile/editprofile.component';
 import { FooterComponent } from "app/components/footer/footer.component";
 import { HomeComponent } from "app/components/home/home.component";
@@ -22,7 +22,7 @@ export const routes = [
   {path: 'about', component: AboutComponent},
   {path: 'contact', component: ContactComponent}, 
   {path: 'create', component: CreateComponent},
-  {path: 'edititem', component: EdititemComponent},
+  // {path: 'edititem', component: EdititemComponent},
   {path: 'editprofile', component: EditprofileComponent},
   {path: 'footer', component: FooterComponent},
   {path: 'item', children:[
