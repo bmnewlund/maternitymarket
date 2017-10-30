@@ -9,7 +9,7 @@
         }">
         <label class="form-header">Email</label>
         <input type="email" class="form-control form-input form-group" formControlName="email" required>
-        <small id="emailHelp" class="form-text text-muted form-input">We'll hide this from buyers.</small>
+        <small id="emailHelp" class="form-text text-muted form-input">Buyers will see this.</small>
         <div class="form-control-feedback" *ngIf="email.errors && (email.dirty || email.touched)">
           <p *ngIf="email.errors.required" class="form-input">Email is required</p>
           <p *ngIf="email.errors.pattern" class="form-input">Please enter a valid email</p>
@@ -40,6 +40,7 @@
         }">
         <label class="form-header">Zip Code</label>
         <input type="text" class="form-control form-input" formControlName="zip" required>
+        <small id="emailHelp" class="form-text text-muted form-input">Buyers will see this.</small>        
         <div class="form-control-feedback" *ngIf="zip.errors && (zip.dirty || zip.touched)">
           <p *ngIf="zip.errors.required" class="form-input">Zip Code is required</p>
           <p *ngIf="zip.errors.minlength" class="form-input">Please enter a valid 5-digit zip code</p>

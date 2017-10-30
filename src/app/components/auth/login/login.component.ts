@@ -20,6 +20,14 @@ export class LoginComponent implements OnInit{
     this.createForm();
   }
 
+  ngAfterViewInit(){
+    $(document).ready(function(){
+      $("#signUpClick").click(function(){
+        $('#login-modal').modal('hide');
+      });
+    });
+  }
+
   myform: FormGroup;
   email: FormControl;
   password: FormControl;
@@ -53,11 +61,4 @@ export class LoginComponent implements OnInit{
       $('#log-in-error').removeClass('invisible');
     })
   }
-
-  // keyDownFunction(form: NgForm) {
-  //   if(event.keyCode == 13) {
-  //     onSignin(form: NgForm)
-  //   }
-  // }
-
 }

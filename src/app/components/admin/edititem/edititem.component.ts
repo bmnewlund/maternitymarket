@@ -10,6 +10,14 @@ export class EdititemComponent implements OnInit {
 
   constructor() { }
 
+  ngAfterViewInit(){
+    $(document).ready(function(){
+      $("#free-item").click(function(){
+        $("#price").val('Free');
+      });
+    });
+  }
+
   ngOnInit() {
   }
 

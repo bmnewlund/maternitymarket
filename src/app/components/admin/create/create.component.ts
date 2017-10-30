@@ -21,7 +21,6 @@ urlForm: string
   ngAfterViewInit(){
     $(document).ready(function(){
       $("#free-item").click(function(){
-        $("#price").attr('disabled');
         $("#price").val('Free');
       });
     });

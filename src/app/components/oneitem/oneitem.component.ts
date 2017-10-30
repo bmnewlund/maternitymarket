@@ -31,11 +31,10 @@ export class OneitemComponent implements OnInit {
     this.itemService.getItemByKey(this.id).subscribe(items =>{
     this.item = items
 
-    this.userService.getUserByUserID(this.item.userid).subscribe(user =>{
-      this.user = user[0]
-      console.log(this.item)
-    })
-
+      this.userService.getUserByUserID(this.item.userid).subscribe(user =>{
+        this.user = user[0]
+        console.log(this.item.category)
+      })
     })
   }
 }
