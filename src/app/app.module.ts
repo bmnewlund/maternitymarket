@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from 'app/components/auth/login/login.component';
 import { HomeComponent } from 'app/components/home/home.component';
 import { NavbarComponent } from 'app/components/navbar/navbar.component';
-import { Item } from 'app/models/item.model';
+// import { Item } from 'app/models/item.model';
 import { RouterModule } from "@angular/router";
 import { routes } from "./constants/routes";
 import { FooterComponent } from 'app/components/footer/footer.component';
