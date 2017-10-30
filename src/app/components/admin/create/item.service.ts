@@ -11,14 +11,17 @@ export class ItemService {
 
   //itemsCollection: AngularFireObject<Item>;
   items: any;
+  users: any;
   //itemDoc: AngularFireObject<Item>;
   
   itemsDB: AngularFireList<any>;
+  usersDB: AngularFireList<any>;
   // itemRef: AngularFireObject<Item>;
   //item$: FirebaseObjectObservable<any>;
   
   constructor(public db: AngularFireDatabase) {
     this.itemsDB = this.db.list(`items`); 
+    this.usersDB = this.db.list(`users`);
     //this.items = this.db.('items', ref=> ref.orderBy('title'))
   }
   
@@ -50,4 +53,6 @@ export class ItemService {
     let key = this.itemsDB.push(items).key;
     this.itemsDB.set(`${key}/key`, key);
   }
+
+  
 }
