@@ -43,13 +43,10 @@ export class ItemService {
   }
 
   updateItem(item) {
-    console.log(item)
     this.itemsDB.update(item.key, item);
-  
   }
 
   createItem(items: Item) {
-    console.log(items);
     let key = this.itemsDB.push(items).key;
     this.itemsDB.set(`${key}/key`, key);
   }

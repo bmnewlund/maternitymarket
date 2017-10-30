@@ -11,11 +11,17 @@ declare var $: any
 export class AdminComponent implements OnInit {
 
   items: any
-  key: any;
+  key: any
   itemKey
+  itemKeyUpdate
 
   constructor(private itemService: ItemService, db: AngularFireDatabase) {}
 
+  ngOnInit() {
+    this.itemService.getItemsByUserID().subscribe(items =>{
+      this.items = items;
+    })
+  }
 
   deleteItem(e) {
     this.itemKey = e.target.id
@@ -26,10 +32,20 @@ export class AdminComponent implements OnInit {
     $('#deleteitem-modal').modal('hide');
   }
 
-  ngOnInit() {
-    this.itemService.getItemsByUserID().subscribe(items =>{
-      this.items = items;
-    })
-  }
+  updateItem(e){
+    this.itemKeyUpdate = e.target.id
+    }
 
+  confirmUpdateItem(category, title, price, description) {
+    let data = {
+      category: category.value,
+      title: title.value,
+      price: price.value,
+      description: description.value,
+      key: this.itemKeyUpdate
+    }
+
+    this.itemService.updateItem(data)
+    $('#edititem-modal').modal('hide');
+  }
 }
