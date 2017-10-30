@@ -26,14 +26,14 @@ babylist = {
   }
 
   ngAfterViewInit(){
-    $(document).ready(function(){
-      $(".category").click(function(){
-        $("#category-bar").replaceWith('<span id="category-bar">'+this.id+'</span>');
-      });
-      $(".browse-btn").click(function(){
-        $("#category-bar").replaceWith('<span id="category-bar">Browsing All (click here to select a category)</span>');
-        });
-    });
+    // $(document).ready(function(){
+    //   $(".category").click(function(){
+    //     $("#category-bar").replaceWith('<span id="category-bar">'+this.id+'</span>');
+    //   });
+    //   $(".browse-btn").click(function(){
+    //     $("#category-bar").replaceWith('<span id="category-bar">Browsing All (click here to select a category)</span>');
+    //     });
+    // });
   }
 
   ViewAll() {

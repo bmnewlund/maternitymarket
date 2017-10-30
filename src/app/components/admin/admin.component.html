@@ -9,7 +9,12 @@
       <div class="image-tab col-lg-3.5" *ngFor="let item of items">
         <div class="btns">
           <a class="clickable" data-toggle="modal" data-target="#edititem-modal"><img src="../assets/edit.png"></a>
+          
           <a class="clickable" data-toggle="modal" data-target="#deleteitem-modal" (click)="deleteItem($event)"><img src="../assets/delete.png" id="{{ item.key }}"></a>
+          
+<!--           <app-deleteitem [key] = "{ keyId: item.key }"></app-deleteitem> -->
+          <app-edititem [key] = "{ keyId: item.key }"></app-edititem>
+
 
           <div class="modal fade" id="deleteitem-modal" tabindex="-1" role="dialog" aria-hidden="true">
               <div class="modal-dialog" role="document">
@@ -54,4 +59,4 @@
 </div>
 
 <app-create></app-create>
-<app-edititem></app-edititem>
+

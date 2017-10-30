@@ -9,6 +9,7 @@ declare var $: any
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
+
   items: any
   key: any;
   itemKey
