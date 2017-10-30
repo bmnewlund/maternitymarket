@@ -28,15 +28,7 @@ export class EdititemComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.itemService.getItems().subscribe(item => {
-    //   console.log(item);
-    //   this.item = item;
-    // })
   }
-
-  // editItem(item){
-    
-  // }
 
   updateItem(category, title, price, description) {
     let data = {
@@ -48,6 +40,7 @@ export class EdititemComponent implements OnInit {
     }
     
     console.log(data);
+    console.log(data.key);
     this.itemService.updateItem(data)
     $('#edititem-modal').modal('hide');
     

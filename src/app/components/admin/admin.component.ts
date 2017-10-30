@@ -11,7 +11,7 @@ declare var $: any
 export class AdminComponent implements OnInit {
 
   items: any
-  key: any;
+  key: any
   itemKey
 
   constructor(private itemService: ItemService, db: AngularFireDatabase) {}
