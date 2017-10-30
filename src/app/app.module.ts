@@ -22,12 +22,12 @@ import { ContactComponent } from 'app/components/footer/contact/contact.componen
 import { AboutComponent } from 'app/components/footer/about/about.component';
 import { LegalComponent } from 'app/components/footer/legal/legal.component';
 import { SignupComponent } from 'app/components/auth/signup/signup.component';
-// import { EdititemComponent } from 'app/components/admin/edititem/edititem.component';
+import { EdititemComponent } from 'app/components/admin/edititem/edititem.component';
 import { EditprofileComponent } from 'app/components/admin/editprofile/editprofile.component';
 import { ItemService } from 'app/components/admin/create/item.service';
 import { AuthService } from 'app/services/auth.service';
 import { AuthGuard } from 'app/services/auth-guard.service';
-// import { DeleteitemComponent } from 'app/components/admin/deleteitem/deleteitem.component';
+import { DeleteitemComponent } from 'app/components/admin/deleteitem/deleteitem.component';
 import { LoginpageComponent } from 'app/components/auth/loginpage/loginpage.component';
 import { AngularFireAuth } from 'angularfire2/auth';
 import {AngularFireAuthModule} from 'angularfire2/auth';
@@ -49,9 +49,9 @@ import * as firebase from 'firebase';
     AboutComponent,
     LegalComponent,
     SignupComponent,
-    // EdititemComponent,
+    EdititemComponent,
     EditprofileComponent,
-    // DeleteitemComponent,
+    DeleteitemComponent,
     LoginpageComponent,
   ],
   imports: [
