@@ -9,24 +9,20 @@ import { Item } from 'app/models/item.model';
 @Injectable()
 export class ItemService {
 
-  //itemsCollection: AngularFireObject<Item>;
-  items: any;
+  items: AngularFireList <any>;
   users: any;
-  //itemDoc: AngularFireObject<Item>;
   
   itemsDB: AngularFireList<any>;
   usersDB: AngularFireList<any>;
-  // itemRef: AngularFireObject<Item>;
-  //item$: FirebaseObjectObservable<any>;
   
   constructor(public db: AngularFireDatabase) {
     this.itemsDB = this.db.list(`items`); 
     this.usersDB = this.db.list(`users`);
-    //this.items = this.db.('items', ref=> ref.orderBy('title'))
+    this.items = this.db.list('items'), ref => ref.orderBy('title')
   }
   
   getItems() {
-    return this.items;
+    return this.items.valueChanges();
   }
 
   getItemsByUserID() {
