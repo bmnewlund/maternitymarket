@@ -1,0 +1,15 @@
+#login-modal {
+    color:black;
+}
+
+.form-input {
+    font-size: 13px;
+}
+
+.error {
+    color: red;
+}
+
+.squeeze-top{
+    margin-top: -20px;
+}

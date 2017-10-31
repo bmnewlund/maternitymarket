@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row padding-top">
+    <div class="header-font col-lg-10">
+      {{ item?.title }}
+    </div>
+    <div class="header-font col-lg-2">
+      <b>{{ item?.price }}</b>
+    </div>
+  </div>
+
+  <div class="row small-text padding">
+    Description:
+  </div>
+  
+  <div class="row">
+    <div class="col-lg-5 desc-box">
+      <div class="text">
+        {{ item?.description }}
+      </div>
+    </div>
+    <div class="col-lg-7">
+      <div>
+        <div class="img-box">
+        <img style='height: 100%; width: 100%; object-fit: contain' src="{{ item?.imgurl }}">
+        </div>
+        <div class="contact-box text"> 
+          <p>Location:<br>
+          {{ user.zip }}</p>
+          <p>Contact Seller:<br>
+          {{ user.email }}<br>
+          {{ user.phone }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-lg-center buttons">
+    <button class="btn btn-secondary back-link text" routerLink="/home">
+      back to search
+    </button>
+  </div>
+</div>
+

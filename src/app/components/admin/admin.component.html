@@ -1,0 +1,140 @@
+<div class="row soft-title-font">
+  my items
+</div>
+
+<div class="row">
+  <div class="col-lg-9 justify-content-center">
+    <div class="row small-text">
+
+      <div class="image-tab col-lg-3.5" *ngFor="let item of items">
+        <div class="btns">
+          <a class="clickable" data-toggle="modal" data-target="#edititem-modal" (click)="updateItem($event)"><img src="../assets/edit.png" id="{{ item.key }}"></a>
+          <a class="clickable" data-toggle="modal" data-target="#deleteitem-modal" (click)="deleteItem($event)"><img src="../assets/delete.png" id="{{ item.key }}"></a>
+          
+          <!-- <app-edititem [key] = "{ keyId: item.key }"></app-edititem> -->
+
+          <div class="modal fade" id="deleteitem-modal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+          
+                <div class="modal-body text">
+                  Are you sure you want to delete this item?
+                </div>
+        
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+                  <button class="btn btn-primary" (click)="confirmDelete()">Delete</button>
+                </div>
+    
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="edititem-modal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  
+                  <h5 class="modal-title softer-title-font">Edit Item</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+          
+                <div class="modal-body">
+                  <form (ngSubmit)="updateItem(category, title, price, description)" class="text offset-lg-1 col-lg-10">
+                    <label for="category">Category</label>
+                    <div class="form-group">
+                      <select class="form-control" id="category" #category>
+                            <option disabled></option>
+                            <option disabled>For Mom:</option>
+                        <option>Activewear</option>
+                        <option>Dresses</option>
+                        <option>Pants</option>
+                        <option>Shorts</option>
+                        <option>Skirts</option>
+                        <option>Sweaters</option>
+                        <option>Tops</option>
+                        <option>Other</option>
+                            <option disabled></option>
+                            <option disabled>For Baby:</option>
+                        <option>Activities & Gear</option>
+                        <option>Apparel</option>
+                        <option>Bath</option>
+                        <option>Bedding</option>
+                        <option>Car Seats</option>
+                        <option>Diaper Bags</option>
+                        <option>Diapers</option>
+                        <option>Feeding & Nursing</option>
+                        <option>Health & Safety</option>
+                        <option>Nursery Decor</option>
+                        <option>Nursery Furniture</option>
+                        <option>Nursery Storage</option>
+                        <option>Playroom</option>
+                        <option>Strollers</option>
+                        <option>Swaddle</option>
+                        <option>Blankets</option>
+                        <option>Toys</option>
+                        <option>Other</option>
+                      </select>
+                    </div>
+          
+                    <label for="title">Title</label> 
+                    <div class="form-group">   
+                      <input type="text" class="form-control" id="title" #title/>
+                    </div>
+          
+                    <label for="price">Price</label>
+                    <div class="input-group">
+                      <input type="text" class="form-control" aria-label="Text input with radio button" id="price" #price>
+                      <span id="free-item" class="input-group-addon clickable">Free</span>
+                    </div>
+                
+                    <label for="description" class="pt-3">Description</label>
+                    <div class="form-group">
+                      <textarea class="form-control" rows="5" id="description" #description></textarea>
+                    </div>
+          
+                    <!-- <label for="image">Upload a different image</label>
+                    <div class="form-group">
+                      <input type="file" id="image" #image>
+                    </div> -->
+          
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+                      <input type="submit" class="btn btn-primary" (click)="confirmUpdateItem(category, title, price, description)"value="Update Item" />
+                    </div>
+          
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <img class="img-fill clickable" src="{{ item.imgurl }}" routerLink="/item/{{ item.key }}">
+        <div class="row mt-2">
+          <div class="col-lg-9">
+          {{ item.title }}
+          </div>
+          <div class="col-lg-3 text-right">
+          {{ item.price }}
+          </div>
+        </div>
+      </div>
+
+      <div class="add-tab col-lg-3.5">
+        <img class="clickable img-fill" data-toggle="modal" data-target="#create-modal"  src="../assets/add.png">
+      </div>
+
+    </div>
+  </div>
+
+  <div class="col-lg-3 justify-content-right">
+    <app-editprofile></app-editprofile>
+  </div>
+  
+</div>
+
+<app-create></app-create>
+

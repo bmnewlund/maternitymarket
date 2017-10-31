@@ -1,0 +1,33 @@
+.img-fill {
+    object-fit: cover;
+    width: 100%;
+    height: 220px;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.image-tab {
+    width: 30%;
+    height: 100%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 25px;
+    margin: 10px;
+}
+
+.add-tab {
+    width: 30%;
+    height: 30%;
+    padding: 20px;
+    margin: 10px;
+}
+
+.btns {
+    text-align: left;
+    width: 13.5em;
+    padding: 7px 7px;
+    position: absolute;
+    align-content: right;
+}

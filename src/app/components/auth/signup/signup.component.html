@@ -1,0 +1,56 @@
+<div class="column">
+  <div class="row col-lg-6">
+    <div class="soft-title-font">Sign Up</div>
+    
+    <form novalidate [formGroup]="myform" (ngSubmit)="onSignup(f)" #f="ngForm" class="form-width">
+      <div class="form-group" [ngClass]="{
+        'has-danger': email.invalid && (email.dirty || email.touched),
+        'has-success': email.valid && (email.dirty || email.touched)
+        }">
+        <label class="form-header">Email</label>
+        <input type="email" class="form-control form-input form-group" formControlName="email" required>
+        <small id="emailHelp" class="form-text text-muted form-input">Buyers will see this.</small>
+        <div class="form-control-feedback" *ngIf="email.errors && (email.dirty || email.touched)">
+          <p *ngIf="email.errors.required" class="form-input">Email is required</p>
+          <p *ngIf="email.errors.pattern" class="form-input">Please enter a valid email</p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-header">Phone Number</label>
+        <input type="tel" class="form-control form-input" formControlName="phone" placeholder="(___) ___-____">
+        <small id="phoneHelp" class="form-text text-muted form-input">This is optional. Enter your number if<br>you'd like buyers to call or text you.</small>
+      </div>
+
+      <div class="form-group" [ngClass]="{
+        'has-danger': password.invalid && (password.dirty || password.touched),
+        'has-success': password.valid && (password.dirty || password.touched)
+        }">
+        <label class="form-header">Password</label>
+        <input type="password" class="form-control form-input" formControlName="password" required>
+        <div class="form-control-feedback" *ngIf="password.errors && (password.dirty || password.touched)">
+          <p *ngIf="password.errors.required" class="form-input">Password is required</p>
+          <p *ngIf="password.errors.minlength" class="form-input">Your password must be 8 characters, we need {{password.errors.minlength.requiredLength - password.errors.minlength.actualLength}} more </p>
+        </div>
+      </div>
+
+      <div class="form-group" [ngClass]="{
+        'has-danger': zip.invalid && (zip.dirty || zip.touched),
+        'has-success': zip.valid && (zip.dirty || zip.touched)
+        }">
+        <label class="form-header">Zip Code</label>
+        <input type="text" class="form-control form-input" formControlName="zip" required>
+        <small id="emailHelp" class="form-text text-muted form-input">Buyers will see this.</small>        
+        <div class="form-control-feedback" *ngIf="zip.errors && (zip.dirty || zip.touched)">
+          <p *ngIf="zip.errors.required" class="form-input">Zip Code is required</p>
+          <p *ngIf="zip.errors.minlength" class="form-input">Please enter a valid 5-digit zip code</p>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">sign up</button>
+    
+    </form>
+  </div>
+</div>
+
+

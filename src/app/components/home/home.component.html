@@ -1,0 +1,62 @@
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<div class="container">
+    <div class="row">
+        <span class="title-font title-padding">Maternity<br>Market</span>
+    </div>
+    <div class="row">
+        <div class="dropdown col-lg-12">
+            <button class="btn btn-secondary dropdown-toggle search-btn col-lg-8 text" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (click)="ShowCategories($event)">
+                <span id="category-bar">Shop by category...</span>
+            </button>
+
+            <button type="button" class="btn btn-info browse-btn" (click)="ViewAll()" data-ng-show="collapse" data-target="#results">or browse all</button>
+
+            <div class="clickable col-lg-8 menu text-center" [hidden]="Unclicked" (click)="ViewByCategory($event)">
+                <div class="row softer-title-font menu-header">
+                    <div class="col-lg-6 justify-content-center">
+                        For Baby:
+                    </div>
+                    <div class="col-lg-4">
+                        For Mom:
+                    </div>
+                </div>
+                <div class="row small-text top-squeeze">
+                    <div class="col-lg-3 baby-list-1">
+                        <span *ngFor="let baby of babylist.category1" id={{baby}} class="category"><br />{{baby}}</span>
+                    </div>
+                    <div class="col-lg-3 baby-list-2">
+                        <span *ngFor="let baby of babylist.category2" id={{baby}} class="category"><br />{{baby}}</span>
+                    </div>
+                    <div class="col-lg-4 mom-list">
+                        <span *ngFor="let mom of babylist.momlist" id={{mom}} class="category"><br />{{mom}}</span>
+                    </div>
+                </div>
+            </div>
+            <!--  -->
+
+        </div>
+    </div>
+    <div class="row link-padding">
+        <a routerLink="/signup" class="sign-up text">Have something you want to sell or give away?</a>
+    </div>
+
+    <div id="results">
+        <div class="row mt-5 small-text">
+            
+          <div class="image-tab col-lg-3" *ngFor="let item of items">
+            <img id="{{ item.key }}" class="img-fill clickable" src="{{ item.imgurl }}" routerLink="/item/{{ item.key }}">
+            {{item.value}}
+            <div class="row mt-2">
+              <div class="col-lg-9">
+              {{ item.title }}
+              </div>
+              <div class="col-lg-3 text-right">
+              {{ item.price }}
+              </div>
+            </div>
+          </div>
+        
+        </div>
+    </div>
+
+</div>

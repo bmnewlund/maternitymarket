@@ -1,0 +1,88 @@
+<script
+src="https://code.jquery.com/jquery-2.2.4.min.js"
+integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+crossorigin="anonymous"></script>
+
+<div class="modal fade" id="create-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content create-modal">
+        <div class="modal-header">
+          
+          <h5 class="modal-title softer-title-font" id="exampleModalLabel">Add an Item</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <form class="text offset-lg-1 col-lg-10">
+            <label for="category">Choose a Category</label>
+            <div class="form-group">
+              <select class="form-control" id="category" #category>
+                    <option disabled></option>
+                  <option disabled>For Baby:</option>
+                <option>Activities & Gear</option>
+                <option>Apparel</option>
+                <option>Bath</option>
+                <option>Bedding</option>
+                <option>Car Seats</option>
+                <option>Diaper Bags</option>
+                <option>Diapers</option>
+                <option>Feeding & Nursing</option>
+                <option>Health & Safety</option>
+                <option>Nursery Decor</option>
+                <option>Nursery Furniture</option>
+                <option>Nursery Storage</option>
+                <option>Playroom</option>
+                <option>Strollers</option>
+                <option>Swaddle</option>
+                <option>Blankets</option>
+                <option>Toys</option>
+                <option>Baby Other</option>
+                    <option disabled></option>
+                  <option disabled>For Mom:</option>
+                <option>Activewear</option>
+                <option>Dresses</option>
+                <option>Pants</option>
+                <option>Shorts</option>
+                <option>Skirts</option>
+                <option>Sweaters</option>
+                <option>Tops</option>
+                <option>Mom Other</option>
+
+              </select>
+            </div>
+
+            <label for="title">Title</label> 
+            <div class="form-group">   
+              <input type="text" class="form-control" id="title" #title/>
+            </div>
+  
+            <label for="price">Price</label>
+            <div class="input-group">
+              <input type="text" class="form-control" aria-label="Text input with radio button" id="price" #price>
+              <span id="free-item" class="input-group-addon clickable">Free</span>
+            </div>
+        
+            <label for="description" class="pt-3">Description</label>
+            <div class="form-group">
+              <textarea class="form-control" rows="5" id="description" #description></textarea>
+            </div>
+
+            <label for="image">Upload Image</label>
+            <div class="form-group">
+              <input type="file" id="image" (change)="ImageSelected($event)" #image>
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+              <button class="btn btn-primary" (click)="createItem(category, title, price, description, zip, image)" id="submit">Submit</button>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
