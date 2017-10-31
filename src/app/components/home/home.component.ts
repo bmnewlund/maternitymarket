@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, enableProdMode } from '@angular/core';
 import { ItemService } from 'app/components/admin/create/item.service';
 
 @Component({
@@ -26,14 +26,14 @@ babylist = {
   }
 
   ngAfterViewInit(){
-    // $(document).ready(function(){
-    //   $(".category").click(function(){
-    //     $("#category-bar").replaceWith('<span id="category-bar">'+this.id+'</span>');
-    //   });
-    //   $(".browse-btn").click(function(){
-    //     $("#category-bar").replaceWith('<span id="category-bar">Browsing All (click here to select a category)</span>');
-    //     });
-    // });
+    $(document).ready(function(){
+      $(".category").click(function(){
+        $("#category-bar").replaceWith('<span id="category-bar">'+this.id+'</span>');
+      });
+      $(".browse-btn").click(function(){
+        $("#category-bar").replaceWith('<span id="category-bar">Browsing All (click here to select a category)</span>');
+        });
+    });
   }
 
   ViewAll() {
