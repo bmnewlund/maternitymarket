@@ -30,16 +30,12 @@ this.Deactivated = !this.Deactivated
   let data = {
     email: email.value,
     phone: phone.value,
-    zip: zip.value,
-    // userid: firebase.auth().currentUser.uid
-  }
+    zip: zip.value
+    }
 
   this.userService.updateProfile(data);
   
-
 }
-
-  
 
   ngOnInit() {
   }
