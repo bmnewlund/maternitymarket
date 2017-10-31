@@ -34,7 +34,15 @@ export class AdminComponent implements OnInit {
 
   updateItem(e){
     this.itemKeyUpdate = e.target.id
-    }
+    this.itemService.getItemByKey(this.itemKeyUpdate).subscribe(items =>{
+      this.items = items
+    $('#category').val(this.items.category)
+    $('#title').val(this.items.title)
+    $('#price').val(this.items.price)
+    $('#description').val(this.items.description)
+    })
+  }
+
 
   confirmUpdateItem(category, title, price, description) {
     let data = {
