@@ -7,9 +7,9 @@ The Maternity Market app was developed using Angular 4, Google Firebase, and Ang
 
 ## Project Authors
 
-[Brandon Schaaf](https://BrandonSchaaf.github.io)
-[Brett Newlund](https://bmnewlund.github.io)
-[Simon Lee](https://simonhlee97.github.io)
+[Brandon Schaaf](https://BrandonSchaaf.github.io)  
+[Brett Newlund](https://bmnewlund.github.io)  
+[Simon Lee](https://simonhlee97.github.io)  
 
 ## Project Clone Requirements:
 1. [Git](https://git-scm.com/)
