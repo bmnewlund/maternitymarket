@@ -22,7 +22,9 @@ constructor(public userService: UserService) {
  }
 
 ActivateEditProfile(e){
-this.Deactivated = !this.Deactivated
+// this.Deactivated = !this.Deactivated
+  // this.userService.getUserByUserID(this.userService.currentUser).subscribe(user =>{
+  // })
 }
 
 SaveChanges(email, phone, zip){
